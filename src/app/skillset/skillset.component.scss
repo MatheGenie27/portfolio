@@ -1,5 +1,5 @@
 *{
-    background-color: violet;
+    
 }
 
 :host {
@@ -7,7 +7,12 @@
     width: 100%; /* Setzt die Komponente auf volle Breite */
     max-width: 1440px; /* Optional: Maximale Breite festlegen */
     margin: 0 auto; /* Zentriert die Komponente innerhalb des übergeordneten Containers */
+    background: linear-gradient(128.94deg, #5988FF -33.96%, #5988FF 36.71%, #0043F0 112.25%);
   }
+
+
+  
+
 
 #skillsetContainer{
     display:flex;
@@ -26,13 +31,16 @@
 }
 
 #technologyContainer{
+    box-sizing: border-box;
+    padding-left: clamp(1rem, 2vw ,0rem);
+    padding-right: clamp(1rem, 2vw ,0rem);
     width: 100%;
     max-width: 1036px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     margin-bottom: 5.25rem;
-    gap: 50px;
+    gap: clamp(15px, 3vw ,50px);
 }
 
 h2{
