@@ -1,0 +1,10 @@
+*{
+    background-color: navajowhite;
+}
+
+:host {
+    display: flex;
+    width: 100%; /* Setzt die Komponente auf volle Breite */
+    max-width: 1440px; /* Optional: Maximale Breite festlegen */
+    margin: 0 auto; /* Zentriert die Komponente innerhalb des übergeordneten Containers */
+  }

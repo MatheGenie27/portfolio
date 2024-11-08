@@ -1,1 +1,58 @@
 /* You can add global styles to this file, and also import other style files */
+
+.component-container{
+    width:100%;
+    max-width: 1440px;
+    
+}
+
+*{
+    margin: 0;
+    
+}
+
+  /* baloo-2-regular - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Baloo 2';
+    font-style: normal;
+    font-weight: 400;
+    src: url('assets/fonts/baloo-2-v21-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Baloo';
+    font-style: normal;
+    font-weight: 400;
+    src: url('assets/fonts/Baloo-Regular.ttf') format('truetype'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+
+  
+  /* montserrat-regular - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    src: url('assets/fonts/montserrat-v26-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  
+  html{
+    margin:0;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+  }
+  
+  h1,h2,h3,h3{
+    font-family: 'Baloo';
+    font-style: normal;
+  }
+  
+  
+  
+  h2{
+    font-size: 6rem;
+    font-weight: 400;
+  }

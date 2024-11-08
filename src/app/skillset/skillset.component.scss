@@ -1,0 +1,40 @@
+*{
+    background-color: violet;
+}
+
+:host {
+    display: flex;
+    width: 100%; /* Setzt die Komponente auf volle Breite */
+    max-width: 1440px; /* Optional: Maximale Breite festlegen */
+    margin: 0 auto; /* Zentriert die Komponente innerhalb des übergeordneten Containers */
+  }
+
+#skillsetContainer{
+    display:flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#skillSetHeader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    
+}
+
+#technologyContainer{
+    width: 100%;
+    max-width: 1036px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 5.25rem;
+    gap: 50px;
+}
+
+h2{
+    color: white;
+}
