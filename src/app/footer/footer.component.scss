@@ -1,10 +1,57 @@
-*{
-    background-color: orangered;
-}
+
 
 :host {
     display: flex;
     width: 100%; /* Setzt die Komponente auf volle Breite */
     max-width: 1440px; /* Optional: Maximale Breite festlegen */
     margin: 0 auto; /* Zentriert die Komponente innerhalb des übergeordneten Containers */
+    background: radial-gradient(71.18% 335.57% at 28.82% -124.4%, #5988FF 6.25%, #5988FF 51.56%, #0043F0 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    color: white;
+  }
+
+  #footerContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 18rem;
+    gap: 1rem;
+  }
+
+  #footerUpperRow{
+    
+    width:100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+  }
+
+  #footerSocMediaContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+
+  #legalNoticeRow{
+    
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    
+  }
+
+  #footerCopyright{
+    font-size: 1.5rem;
+  }
+
+  #footerLogo{
+    width:69px;
+    height: 69px;
+    background-color: white;
+    color: #0043F0;
   }

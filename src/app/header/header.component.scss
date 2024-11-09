@@ -1,6 +1,4 @@
-*{
-    background-color: pink;
-}
+
 
 :host {
     display: flex;
@@ -9,6 +7,7 @@
     margin: 0 auto; /* Zentriert die Komponente innerhalb des übergeordneten Containers */
     position: absolute;
     top:0;
+    z-index: 4;
   }
 
   #headerContainer{

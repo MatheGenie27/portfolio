@@ -1,4 +1,75 @@
 <div class="component-container">
-<p>about-me works!</p>
+  <div class="circle-background-big"></div>
+  <div class="circle-background-small"></div>
+  <div id="aboutmeContainer">
+    <div id="letsWorkContainer">
+      <h2>Let's work together</h2>
 
+      <div id="availabilityContainer">
+        <div id="iAm">I am</div>
+
+        <div id="availabilityIconRow">
+          <div
+            id="located"
+            class="availabilityIcons"
+            (mouseenter)="locationOnHover(true)"
+            (mouseleave)="locationOnHover(false)"
+          >
+            <img
+              id="locationImg"
+              class="availabilityIconsImgs"
+              [src]="locationIconPath"
+            />
+            <div class="availybilityTexts">located in Kaiserslautern</div>
+          </div>
+          <div
+            id="remote"
+            class="availabilityIcons"
+            (mouseenter)="remoteOnHover(true)"
+            (mouseleave)="remoteOnHover(false)"
+          >
+            <div id="remoteImgContainer">
+              <img
+                id="remoteImg"
+                class="availabilityIconsImgs"
+                [src]="remoteIconPath"
+              />
+            </div>
+            <div id="remoteTxt" class="availybilityTexts">open to work remote</div>
+          </div>
+          <div
+            id="relocate"
+            class="availabilityIcons"
+            (mouseenter)="relocateOnHover(true)"
+            (mouseleave)="relocateOnHover(false)"
+          >
+          <div id="relocateImgContainer">
+            <img class="availabilityIconsImgs" [src]="relocateIconPath" />
+            </div>
+            <div class="availybilityTexts">not open to relocate</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="aboutMeTextandButton">
+      <div id="aboutMeText">
+        <p>
+          I am a Front-end developer based in Kaiserslautern, Germany. I enjoy
+          helping designers and companies bring their ideas into real life. I am
+          looking forward to continuing my developer career with a job in a
+          junior web developer position. My ability to solve complex problems
+          and my passion for programming make me a valuable member for your
+          team.
+        </p>
+        <p>If you think I’d be a good match for your projects, contact me!</p>
+      </div>
+      <div
+        (click)="onScrollToContact()"
+        id="contactRefButton"
+        class="mainButton"
+      >
+        <span>Send a message</span>
+      </div>
+    </div>
+  </div>
 </div>

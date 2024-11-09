@@ -1,10 +1,176 @@
-*{
-    background-color: sandybrown;
-}
+
 
 :host {
     display: flex;
     width: 100%; /* Setzt die Komponente auf volle Breite */
     max-width: 1440px; /* Optional: Maximale Breite festlegen */
     margin: 0 auto; /* Zentriert die Komponente innerhalb des übergeordneten Containers */
+    background-color: white;
+    position: relative;
+}
+
+#aboutmeContainer{
+    display: flex;
+    width: 100%;
+    
+    justify-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 137px;
+    margin-bottom: 122px;
+
+}
+
+.circle-background-big{
+    
+    position: absolute;
+    border-radius: 100%;
+    top:-103px;
+    left: calc(50% - 83px);
+    width: 206px;
+    height: 206px;
+    z-index: 1;
+    
+
+    background: radial-gradient(74.22% 74.22% at 19.79% 22.42%, #5988FF 6.25%, #5988FF 51.56%, #0043F0 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+
+}
+
+.circle-background-small{
+    position: absolute;
+    width: 82px;
+    height: 82px;
+    border-radius: 100%;
+    right: 25%;
+    top: 30px;
+    
+    background: radial-gradient(74.22% 74.22% at 19.79% 22.42%, #5988FF 6.25%, #5988FF 51.56%, #0043F0 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+
+
+}
+
+
+#letsWorkContainer{
+    max-width: 606px;
+    width: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap:40px; 
+}
+
+#aboutMeTextandButton{
+    max-width: 571px;
+    width: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap:40px;
+}
+
+h2{
+    color: rgba(89, 136, 255, 1);
+}
+
+p{
+    margin-bottom: 1rem;
+}
+
+#availabilityContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#iAm{
+    font-family: 'Baloo';
+    color: rgba(89, 136, 255, 1);
+    text-align: center;
+    font-size: 45px;
+    line-height: 45px;
+    font-weight: 400;
+}
+
+#availabilityIconRow{
+    display:flex;
+    width: 100%;
+    height: 51px;
+    justify-content: center;
+    justify-items: center;
+    gap: 48px;
+}
+
+.availabilityIcons{
+    width: fit-content;
+    height: 51px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+
+.availybilityTexts{
+    
+    color:rgba(89, 136, 255, 1);
+    font-size: 1rem;
+    line-height: 1.2rem;
+    text-align: left;
+    
+    
+}
+
+#aboutMeText{
+    font-size: 22px;
+    line-height: 27.6px;
+}
+
+#remote {
+
+    #remoteTxt{
+        width: 125px;
+    }
+
+    #remoteImgContainer{
+        min-width: 63px;
+        height: 55px;
+        display:flex;
+        justify-content: end;
+        align-items: end;
+    }
+
+    #remoteImg {
+      width: 54px;
+      height: 47px;
+      
+    }
+
+    
+  
+    &:hover {
+      #remoteImg {
+        width: 63px;
+        height: 55px;
+      }
+    }
+  
   }
+
+  #relocate{
+    
+    #relocateImgContainer{
+        min-width: 38px;
+        height: 56px;
+        display:flex;
+        justify-content: start;
+        align-items: start;
+    }
+
+  }
+  

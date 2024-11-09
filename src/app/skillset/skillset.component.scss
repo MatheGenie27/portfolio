@@ -1,6 +1,3 @@
-*{
-    
-}
 
 :host {
     display: flex;
@@ -32,17 +29,24 @@
 
 #technologyContainer{
     box-sizing: border-box;
-    padding-left: clamp(1rem, 2vw ,0rem);
-    padding-right: clamp(1rem, 2vw ,0rem);
+    padding-left: clamp(0.8rem, 2vw ,0rem);
+    padding-right: clamp(0.8rem, 2vw ,0rem);
     width: 100%;
     max-width: 1036px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     margin-bottom: 5.25rem;
-    gap: clamp(15px, 3vw ,50px);
+    gap: clamp(10px, 3vw ,50px);
 }
 
 h2{
     color: white;
+}
+
+@media (max-width: 345px) {
+    #technologyContainer{
+    	justify-content: flex-start;
+        
+    }
 }

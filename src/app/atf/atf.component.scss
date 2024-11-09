@@ -1,6 +1,4 @@
-*{
-    background-color: aqua;
-}
+
 
 :host {
     display: flex;
@@ -8,4 +6,40 @@
     max-width: 1440px; /* Optional: Maximale Breite festlegen */
     margin: 0 auto; /* Zentriert die Komponente innerhalb des übergeordneten Containers */
     height: 100vh;
+    background: linear-gradient(179.99deg, #FFFFFF 12.89%, #EAF0FF 91.39%);
+    overflow:hidden;
+    z-index:2;
+    
+
   }
+
+  .circle-background {
+    width: clamp(430px, 62vw, 892px); /* Breite des Kreises */
+    height: clamp(430px, 62vw, 892px); /* Höhe des Kreises */
+    top: clamp(-81px,-6vw, -40px); /* Positioniert den Kreis 71px oberhalb des Containers */
+    left: clamp(-199px, -13vw,-120px); /* Positioniert den Kreis 199px links vom Container */
+    gap: 0px; /* Kein Abstand zwischen Elementen, falls flex oder grid genutzt wird */
+    background: radial-gradient(74.22% 74.22% at 19.79% 22.42%, #5988FF 6.25%, #5988FF 51.56%, #0043F0 100%);
+    position: relative; /* Ermöglicht die freie Platzierung */
+    z-index: 1; /* Positioniert den Kreis hinter anderen Elementen */
+    border-radius: 50%; /* Formt das Element zu einem perfekten Kreis */
+}
+
+
+
+
+/* Mobile (bis 767px) */
+@media (max-width: 767px) {
+    /* Mobile-spezifische Stile */
+}
+
+/* Tablet (768px bis 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* Tablet-spezifische Stile */
+}
+
+/* Desktop (ab 1025px) */
+@media (min-width: 1025px) {
+    /* Desktop-spezifische Stile */
+}
+
