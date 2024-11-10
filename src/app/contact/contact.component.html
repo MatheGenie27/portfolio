@@ -1,6 +1,40 @@
 <div class = "component-container">
-<p>contact works!</p>
-    <div #contactContainer id="contactContainer">
 
+    <div #contactContainer id="contactContainer">
+            <div id="contactTextContainer">
+                <h2>Contact</h2>
+                <h3>Got a problem to solve?</h3>
+                <p>
+                    Contact me through this form, I am interested in hearing from you, knowing your ideas and contributing to your projects with my work.
+                </p>
+                <p id="cta">
+                    Need a Frontend Developer? <span id="ctaBold">Contact me!</span>
+                </p>
+            </div>
+            <div id="contactFormContainer">
+                <form id="contactForm" #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+                    
+                    <input [(ngModel)]="contactData.name" name="name" type="text" id="name" placeholder="Your name..." required>
+
+                    
+                    <input [(ngModel)]="contactData.email" type="email" id="email" name="email" placeholder="Your email..." required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
+
+                    
+                    <textarea [(ngModel)]="contactData.message"  id="message" name="message" placeholder="write something...." required>
+                    </textarea>
+                    <div id="checkBoxRow">
+                        <input type="checkbox" name="privacyCheckbox" id="privacyCheckbox" required>
+                        <label for="checkbox">I've read the <a href="assets/policy.html" target="_blank" rel="noopener norefferer">privacy policy</a> and agree to the processing of my data as outlined</label>
+
+                    </div>
+
+                    <button class="mainButton" type="submit" ><span>Say hello ;)</span></button>
+                </form>
+            </div>
+            
     </div>
+    <div id="buttonUpContainer">
+                <img src="assets\icons\IconBackUp.svg">
+    </div>
+
 </div>
