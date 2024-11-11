@@ -10,3 +10,35 @@
     background: linear-gradient(128.94deg, #5988FF -33.96%, #5988FF 36.71%, #0043F0 112.25%);
 
   }
+
+  /* Für Handys und Tablets im Portrait- und Landscape-Modus */
+
+/* Handys im Portrait- und Landscape-Modus (maximale Breite von 600px) */
+@media (max-width: 600px) {
+  /* Styles für Handys */
+}
+
+@media (max-width: 600px) and (orientation: landscape) {
+  /* Styles für Handys im Querformat */
+}
+
+/* Tablets im Portrait- und Landscape-Modus (zwischen 600px und 768px) */
+@media (max-width: 768px) and (min-width: 600px) {
+  /* Styles für Tablets */
+}
+
+@media (max-width: 768px) and (min-width: 600px) and (orientation: landscape) {
+  /* Styles für Tablets im Querformat */
+}
+
+/* Für Laptops und Desktops im Landscape-Modus */
+
+/* Laptops im Landscape-Modus (zwischen 768px und 1024px) */
+@media (max-width: 1024px) and (min-width: 768px) and (orientation: landscape) {
+  /* Styles für Laptops im Querformat */
+}
+
+/* Desktops im Landscape-Modus (ab 1024px) */
+@media (min-width: 1024px) and (orientation: landscape) {
+  /* Styles für Desktops im Querformat */
+}

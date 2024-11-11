@@ -6,6 +6,7 @@
     max-width: 1440px; /* Optional: Maximale Breite festlegen */
     margin: 0 auto; /* Zentriert die Komponente innerhalb des übergeordneten Containers */
     background: linear-gradient(179.99deg, #FFFFFF 12.89%, #EAF0FF 91.39%);
+    position:relative;
   }
 
   #contactContainer{
@@ -155,4 +156,66 @@
       }
     }
   }
-  
+
+
+  .circle{
+    background: radial-gradient(74.22% 74.22% at 19.79% 22.42%, #5988FF 6.25%, #5988FF 51.56%, #0043F0 100%);
+    border-radius: 100%; 
+    position: absolute;
+    top:0;    
+  }
+
+  #backgroundCircleBig{
+    width: 204px;
+    height: 204px;
+    left: 16%;
+    top: 60%;
+  }
+
+  #backgroundCircleMedium{
+    width: 129.91px;
+    height: 129.91px;
+    transform: rotate(81.57deg);
+    top: 4%;
+    left: 60%;
+  }
+
+  #backgroundCircleSmall{
+    width: 73px;
+    height: 73px;
+    top: 85%;
+    right: 6%;
+  }
+
+
+  /* Für Handys und Tablets im Portrait- und Landscape-Modus */
+
+/* Handys im Portrait- und Landscape-Modus (maximale Breite von 600px) */
+@media (max-width: 600px) {
+  /* Styles für Handys */
+}
+
+@media (max-width: 600px) and (orientation: landscape) {
+  /* Styles für Handys im Querformat */
+}
+
+/* Tablets im Portrait- und Landscape-Modus (zwischen 600px und 768px) */
+@media (max-width: 768px) and (min-width: 600px) {
+  /* Styles für Tablets */
+}
+
+@media (max-width: 768px) and (min-width: 600px) and (orientation: landscape) {
+  /* Styles für Tablets im Querformat */
+}
+
+/* Für Laptops und Desktops im Landscape-Modus */
+
+/* Laptops im Landscape-Modus (zwischen 768px und 1024px) */
+@media (max-width: 1024px) and (min-width: 768px) and (orientation: landscape) {
+  /* Styles für Laptops im Querformat */
+}
+
+/* Desktops im Landscape-Modus (ab 1024px) */
+@media (min-width: 1024px) and (orientation: landscape) {
+  /* Styles für Desktops im Querformat */
+}

@@ -9,37 +9,121 @@
     background: linear-gradient(179.99deg, #FFFFFF 12.89%, #EAF0FF 91.39%);
     overflow:hidden;
     z-index:2;
+    position: relative;
+    
     
 
   }
 
-  .circle-background {
-    width: clamp(430px, 62vw, 892px); /* Breite des Kreises */
-    height: clamp(430px, 62vw, 892px); /* Höhe des Kreises */
-    top: clamp(-81px,-6vw, -40px); /* Positioniert den Kreis 71px oberhalb des Containers */
-    left: clamp(-199px, -13vw,-120px); /* Positioniert den Kreis 199px links vom Container */
-    gap: 0px; /* Kein Abstand zwischen Elementen, falls flex oder grid genutzt wird */
-    background: radial-gradient(74.22% 74.22% at 19.79% 22.42%, #5988FF 6.25%, #5988FF 51.56%, #0043F0 100%);
-    position: relative; /* Ermöglicht die freie Platzierung */
-    z-index: 1; /* Positioniert den Kreis hinter anderen Elementen */
-    border-radius: 50%; /* Formt das Element zu einem perfekten Kreis */
+  
+
+
+/* Für Handys und Tablets im Portrait- und Landscape-Modus */
+
+/* Handys im Portrait- und Landscape-Modus (maximale Breite von 600px) */
+@media (max-width: 600px) {
+    /* Styles für Handys */
+}
+
+@media (max-width: 600px) and (orientation: landscape) {
+    /* Styles für Handys im Querformat */
+}
+
+/* Tablets im Portrait- und Landscape-Modus (zwischen 600px und 768px) */
+@media (max-width: 768px) and (min-width: 600px) {
+    /* Styles für Tablets */
+}
+
+@media (max-width: 768px) and (min-width: 600px) and (orientation: landscape) {
+    /* Styles für Tablets im Querformat */
 }
 
 
 
 
-/* Mobile (bis 767px) */
-@media (max-width: 767px) {
-    /* Mobile-spezifische Stile */
+/* Für Laptops und Desktops im Landscape-Modus */
+
+/* Laptops im Landscape-Modus (zwischen 768px und 1024px) */
+@media (max-width: 1024px) and (min-width: 768px) and (orientation: landscape) {
+    /* Styles für Laptops im Querformat */
+
+
+
+
+
+
+
 }
 
-/* Tablet (768px bis 1024px) */
-@media (min-width: 768px) and (max-width: 1024px) {
-    /* Tablet-spezifische Stile */
+/* Desktops im Landscape-Modus (ab 1024px) */
+@media (min-width: 1024px) and (orientation: landscape) {
+    .circle-background {
+        width: clamp(430px, 62vw, 892px); /* Breite des Kreises */
+        height: clamp(430px, 62vw, 892px); /* Höhe des Kreises */
+        top: clamp(-81px,-6vw, -40px); /* Positioniert den Kreis 71px oberhalb des Containers */
+        left: clamp(-199px, -13vw,-120px); /* Positioniert den Kreis 199px links vom Container */
+        gap: 0px; /* Kein Abstand zwischen Elementen, falls flex oder grid genutzt wird */
+        background: radial-gradient(74.22% 74.22% at 19.79% 22.42%, #5988FF 6.25%, #5988FF 51.56%, #0043F0 100%);
+        position: absolute; /* Ermöglicht die freie Platzierung */
+        z-index: 1; /* Positioniert den Kreis hinter anderen Elementen */
+        border-radius: 50%; /* Formt das Element zu einem perfekten Kreis */
+    }
+
+
+    #atfContainer{
+        width: 100%;
+        display: flex;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+        
+        
+    }
+
+    #atfImageContainer{
+        width: 50%;
+        z-index: 4;
+        display: flex;
+        height: 100%;
+        align-items: end;
+        justify-content: center;
+    }
+
+    #heroImage{
+        max-width: 600px;
+        height: fit-content;
+        
+
+    }
+
+    #atfTextContainer{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #textGreet{
+        font-size: 64px;
+        color:rgba(89, 136, 255, 1);
+    }
+    
+    #jobTitle1{
+        font-family: 'Baloo';
+        font-size: 128px;
+        line-height: 120px;
+        color:rgba(89, 136, 255, 1);
+    }
+
+    #jobTitle2{
+        font-family: 'Baloo';
+        font-size: 118px;
+        line-height: 141.6px;
+        color:rgba(89, 136, 255, 1);
+    }
+
+
 }
 
-/* Desktop (ab 1025px) */
-@media (min-width: 1025px) {
-    /* Desktop-spezifische Stile */
-}
+
+
 
