@@ -15,53 +15,80 @@
 
   }
 
+  .circle-background {
+    width: clamp(430px, 62vw, 892px); /* Breite des Kreises */
+    height: clamp(430px, 62vw, 892px); /* Höhe des Kreises */
+    top: clamp(-81px,-6vw, -40px); /* Positioniert den Kreis 71px oberhalb des Containers */
+    left: clamp(-199px, -13vw,-120px); /* Positioniert den Kreis 199px links vom Container */
+    gap: 0px; /* Kein Abstand zwischen Elementen, falls flex oder grid genutzt wird */
+    background: radial-gradient(74.22% 74.22% at 19.79% 22.42%, #5988FF 6.25%, #5988FF 51.56%, #0043F0 100%);
+    position: absolute; /* Ermöglicht die freie Platzierung */
+    z-index: 1; /* Positioniert den Kreis hinter anderen Elementen */
+    border-radius: 50%; /* Formt das Element zu einem perfekten Kreis */
+}
+
+#atfContainer{
+    width: 100%;
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+
+#atfImageContainer{
+    width: 50%;
+    z-index: 4;
+    display: flex;
+    height: 100%;
+    align-items: end;
+    justify-content: center;
+}
+
+#heroImage{
+    max-width: 600px;
+    height: fit-content;
+    
+
+}
+
+#atfTextContainer{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+#textGreet {
+    font-size: clamp(32px, 4vw, 56px); /* Angepasste min und max Werte sowie weniger aggressive Skalierung */
+    color: rgba(89, 136, 255, 1);
+}
+
+#jobTitle1 {
+    font-family: 'Baloo';
+    font-size: clamp(64px, 8vw, 112px); /* Leicht verringerte Werte für feinere Kontrolle */
+    line-height: clamp(48px, 5vw, 120px); /* Reduzierte vw für bessere Lesbarkeit */
+    color: rgba(89, 136, 255, 1);
+}
+
+#jobTitle2 {
+    font-family: 'Baloo';
+    font-size: clamp(60px, 7.6vw, 108px); /* Leicht reduzierte min und max */
+    line-height: clamp(48px, 8vw, 76px); /* Angepasste line-height für mehr Konsistenz */
+    color: rgba(89, 136, 255, 1);
+}
+
   
 
+@media (max-width: 768px){
 
-/* Für Handys und Tablets im Portrait- und Landscape-Modus */
-
-/* Handys im Portrait- und Landscape-Modus (maximale Breite von 600px) */
-@media (max-width: 600px) {
-    /* Styles für Handys */
-}
-
-@media (max-width: 600px) and (orientation: landscape) {
-    /* Styles für Handys im Querformat */
-}
-
-/* Tablets im Portrait- und Landscape-Modus (zwischen 600px und 768px) */
-@media (max-width: 768px) and (min-width: 600px) {
-    /* Styles für Tablets */
-}
-
-@media (max-width: 768px) and (min-width: 600px) and (orientation: landscape) {
-    /* Styles für Tablets im Querformat */
-}
-
-
-
-
-/* Für Laptops und Desktops im Landscape-Modus */
-
-/* Laptops im Landscape-Modus (zwischen 768px und 1024px) */
-@media (max-width: 1024px) and (min-width: 768px) and (orientation: landscape) {
-    /* Styles für Laptops im Querformat */
-
-
-
-
-
-
-
-}
-
-/* Desktops im Landscape-Modus (ab 1024px) */
-@media (min-width: 1024px) and (orientation: landscape) {
     .circle-background {
-        width: clamp(430px, 62vw, 892px); /* Breite des Kreises */
-        height: clamp(430px, 62vw, 892px); /* Höhe des Kreises */
-        top: clamp(-81px,-6vw, -40px); /* Positioniert den Kreis 71px oberhalb des Containers */
-        left: clamp(-199px, -13vw,-120px); /* Positioniert den Kreis 199px links vom Container */
+        width: 156vw; /* Skaliert bis zur vollen Bildschirmbreite */
+        height: 156vw; /* Skaliert gleichmäßig, um die Kreisform zu behalten */
+        top: -10vw; /* Positioniert den Kreis 199px links vom Container */
+        left: -56vw;
+
         gap: 0px; /* Kein Abstand zwischen Elementen, falls flex oder grid genutzt wird */
         background: radial-gradient(74.22% 74.22% at 19.79% 22.42%, #5988FF 6.25%, #5988FF 51.56%, #0043F0 100%);
         position: absolute; /* Ermöglicht die freie Platzierung */
@@ -69,60 +96,54 @@
         border-radius: 50%; /* Formt das Element zu einem perfekten Kreis */
     }
 
-
     #atfContainer{
-        width: 100%;
-        display: flex;
+        flex-direction: column-reverse;
         height: 100vh;
-        align-items: center;
-        justify-content: center;
-        
-        
-    }
-
-    #atfImageContainer{
-        width: 50%;
-        z-index: 4;
-        display: flex;
-        height: 100%;
-        align-items: end;
-        justify-content: center;
-    }
-
-    #heroImage{
-        max-width: 600px;
-        height: fit-content;
-        
-
     }
 
     #atfTextContainer{
-        width: 50%;
+        z-index: 1;
+        height: 80vh;
         display: flex;
-        flex-direction: column;
+        justify-content: center;
+        width: 100%;
     }
 
-    #textGreet{
-        font-size: 64px;
-        color:rgba(89, 136, 255, 1);
+    #textGreet {
+        font-size: clamp(32px, 9vw, 56px); /* Angepasste min und max Werte sowie weniger aggressive Skalierung */
+        margin-bottom: 1rem;
+        color:white;
     }
     
-    #jobTitle1{
+    #jobTitle1 {
         font-family: 'Baloo';
-        font-size: 128px;
-        line-height: 120px;
-        color:rgba(89, 136, 255, 1);
+        font-size: clamp(64px, 17.5vw, 100px); /* Leicht verringerte Werte für feinere Kontrolle */
+        line-height: clamp(48px, 9vw, 120px); /* Reduzierte vw für bessere Lesbarkeit */
+        color: white;
+        width: 100%;
+    }
+    
+    #jobTitle2 {
+        font-family: 'Baloo';
+        font-size: clamp(60px, 16.2vw, 90px); /* Leicht reduzierte min und max */
+        line-height: clamp(48px, 15vw, 90px); /* Angepasste line-height für mehr Konsistenz */
+        color: white;
     }
 
-    #jobTitle2{
-        font-family: 'Baloo';
-        font-size: 118px;
-        line-height: 141.6px;
-        color:rgba(89, 136, 255, 1);
+    #atfImageContainer{
+        height:100%;
+        width: 100%;
     }
 
-
+    #heroImage{
+        width:100%;
+        height: fit-content;
+        
+    
+    }
 }
+    
+
 
 
 
