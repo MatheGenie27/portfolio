@@ -95,6 +95,15 @@
 
   #buttonUpContainer{
     margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+  }
+
+  #buttonUpRow{
+     max-width: 1240px;
+     width:100%;
   }
 
   a{
@@ -105,3 +114,45 @@
   #checkboxLabel{
     font-size: 14px;
   }
+
+
+  #imageContainer {
+    display: inline-block;
+    position: relative;
+    width: 50px; // Beispielgröße
+    height: 50px;
+  
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transition: opacity 0.125s ease, transform 0.125s ease;
+    }
+  
+    // Standardzustand: Erstes Bild sichtbar, zweites Bild unsichtbar
+    .img-normal {
+      opacity: 1;
+      transform: scale(1);
+    }
+  
+    .img-hover {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+  
+    // Hover-Effekt: Erstes Bild ausblenden, zweites Bild einblenden
+    &:hover {
+      .img-normal {
+        opacity: 0;
+        transform: scale(1.2);
+      }
+  
+      .img-hover {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  }
+  

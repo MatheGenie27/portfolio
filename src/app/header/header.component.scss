@@ -20,9 +20,9 @@
 
   #navBar{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    gap:10vw;
+    gap:clamp(20px, 3vw, 36px);
 
   }
 
@@ -30,4 +30,9 @@
     width:68px;
     height:68px;
     background-color: white;
+  }
+
+  a{
+    text-decoration: none;
+    color: rgba(89, 136, 255, 1);
   }

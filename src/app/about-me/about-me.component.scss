@@ -9,10 +9,10 @@
     position: relative;
 }
 
-#aboutmeContainer{
+#aboutMeContainer{
     display: flex;
     width: 100%;
-    
+    flex-direction: row;
     justify-items: center;
     justify-content: center;
     gap: 40px;
