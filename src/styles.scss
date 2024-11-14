@@ -134,7 +134,8 @@ body {
 
   @media (max-width: 768px){
 .mainButton{
-    height: 54px;  
+    height: 54px;
+    margin-bottom: 4px;  
 
     &:hover{
       height:58px;
