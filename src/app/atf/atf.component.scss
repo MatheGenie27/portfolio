@@ -90,10 +90,10 @@
     }
 
     .circle-background {
-        width: 165vw; /* Skaliert bis zur vollen Bildschirmbreite */
-        height: 165vw; /* Skaliert gleichmäßig, um die Kreisform zu behalten */
-        top: -10vw; /* Positioniert den Kreis 199px links vom Container */
-        left: -65vw;
+        width: 175vw; /* Skaliert bis zur vollen Bildschirmbreite */
+        height: 175vw; /* Skaliert gleichmäßig, um die Kreisform zu behalten */
+        top: -20vw; /* Positioniert den Kreis 199px links vom Container */
+        left: -75vw;
 
         gap: 0px; /* Kein Abstand zwischen Elementen, falls flex oder grid genutzt wird */
         background: radial-gradient(74.22% 74.22% at 19.79% 22.42%, #5988FF 6.25%, #5988FF 51.56%, #0043F0 100%);
@@ -105,7 +105,7 @@
     #atfContainer{
         flex-direction: column-reverse;
         height: 130vh;
-        padding-top: clamp(75px, 15vw,200px);
+        padding-top: clamp(100px, 15vw,200px);
     }
 
     #atfTextContainer{
@@ -145,7 +145,7 @@
 
     #heroImage{
         
-        
+        max-height: 90vh;;
     
     }
 }
