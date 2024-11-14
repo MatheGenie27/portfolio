@@ -178,8 +178,33 @@ p{
     }
 
   }
+
+  @media (max-width: 900px) {
+    
+    #availabilityIconRow{
+        flex-direction: column;
+    }
+
+    #availabilityContainer{
+        flex-direction: column;
+        height: 100%;
+    }
+
+    #aboutMeTextandButton{
+        gap: 45px;
+    }
+
+    #letsWorkContainer{
+        gap: 40px;
+        justify-content: start;
+    }
+  }
   
   @media (max-width: 768px){
+
+    #availabilityContainer{
+        flex-direction: column;
+    }
 
 
     .circle-background-big{
