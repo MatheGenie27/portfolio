@@ -201,6 +201,25 @@ p{
         gap: 40px;
         justify-content: start;
     }
+
+
+    .availabilityIcons{
+        padding-left: 2rem;
+    }
+    
+
+    #remote {
+
+
+        padding-left: 0;
+    
+            #remoteTxt{
+                width: 100%;
+            }
+        
+            
+          
+        }
   }
   
   @media (max-width: 768px){
