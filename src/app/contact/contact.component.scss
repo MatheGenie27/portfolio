@@ -188,34 +188,77 @@
   }
 
 
-  /* Für Handys und Tablets im Portrait- und Landscape-Modus */
+  
+  @media (max-width: 768px){
 
-/* Handys im Portrait- und Landscape-Modus (maximale Breite von 600px) */
-@media (max-width: 600px) {
-  /* Styles für Handys */
-}
+    #contactContainer{
+      flex-direction: column;
+      gap: 35px;
+    }
 
-@media (max-width: 600px) and (orientation: landscape) {
-  /* Styles für Handys im Querformat */
-}
+    #backgroundCircleMedium{
+      width: 101.57px;
+      height: 101.57px;
+      top:2%;
+      left:auto;
+      right: 50px;
+    }
 
-/* Tablets im Portrait- und Landscape-Modus (zwischen 600px und 768px) */
-@media (max-width: 768px) and (min-width: 600px) {
-  /* Styles für Tablets */
-}
+    #backgroundCircleBig{
+      display: none;
+    }
 
-@media (max-width: 768px) and (min-width: 600px) and (orientation: landscape) {
-  /* Styles für Tablets im Querformat */
-}
+    #backgroundCircleSmall{
+      width:42px;
+      height: 41px;
+      top:91%
 
-/* Für Laptops und Desktops im Landscape-Modus */
+    }
 
-/* Laptops im Landscape-Modus (zwischen 768px und 1024px) */
-@media (max-width: 1024px) and (min-width: 768px) and (orientation: landscape) {
-  /* Styles für Laptops im Querformat */
-}
+    #contactTextContainer{
+      width: 100%;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
 
-/* Desktops im Landscape-Modus (ab 1024px) */
-@media (min-width: 1024px) and (orientation: landscape) {
-  /* Styles für Desktops im Querformat */
-}
+    h2{
+      margin-bottom: 35px;
+    }
+
+    h3{
+      font-size: 23px;
+      line-height: 27.6px;
+    }
+
+    #cta{
+      margin-bottom: 0;
+    }
+
+    #contactForm{
+      margin-top: 0;
+      align-items: center;
+    }
+
+    #contactFormContainer{
+      box-sizing: border-box;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      
+    }
+
+    #buttonUpContainer{
+      margin-top: 40px;
+      margin-bottom: 30px;
+      padding-left: 1rem;
+    }
+
+    #imageContainer{
+      width: 39px;
+      height: 39px;
+    } 
+
+    .input{
+      width: 100%;
+    }
+
+  }

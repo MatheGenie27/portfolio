@@ -14,13 +14,13 @@
             <div id="contactFormContainer">
                 <form id="contactForm" #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
                     
-                    <input [(ngModel)]="contactData.name" name="name" type="text" id="name" placeholder="Your name..." required>
+                    <input [(ngModel)]="contactData.name" class="input" name="name" type="text" id="name" placeholder="Your name..." required>
 
                     
-                    <input [(ngModel)]="contactData.email" type="email" id="email" name="email" placeholder="Your email..." required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
+                    <input [(ngModel)]="contactData.email" class="input" type="email" id="email" name="email" placeholder="Your email..." required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
 
                     
-                    <textarea [(ngModel)]="contactData.message"  id="message" name="message" placeholder="write something...." required>
+                    <textarea [(ngModel)]="contactData.message"  class="input" id="message" name="message" placeholder="write something...." required>
                     </textarea>
                     <div id="checkBoxRow">
                         <input type="checkbox" name="privacyCheckbox" id="privacyCheckbox" required>
