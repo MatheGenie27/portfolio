@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: end;
     gap: clamp(5px,1vw,10px);
-    height: clamp(100px,25vw,150px);
+    height: clamp(120px,25vw,150px);
     width: 86px;
     color: white;
     transition: gap 125ms ease-in-out;
@@ -25,6 +25,7 @@ img{
 
 .skill-description{
     width: 100%;
+    min-height: 2.5rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
