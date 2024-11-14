@@ -1,5 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
+
+
 .component-container{
     width:100%;
     max-width: 1440px;
@@ -10,6 +12,20 @@
     margin: 0;
     
 }
+
+
+body {
+  
+  scrollbar-width: none; /* Versteckt die Scrollbar in Firefox */
+  -ms-overflow-style: none; /* Versteckt die Scrollbar in IE */
+}
+
+/* WebKit-Browser wie Chrome, Safari, Edge */
+::-webkit-scrollbar {
+  display: none;
+}
+
+
 
   /* baloo-2-regular - latin */
   @font-face {
