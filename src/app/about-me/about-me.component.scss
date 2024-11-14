@@ -183,11 +183,14 @@ p{
     
     #availabilityIconRow{
         flex-direction: column;
+        padding-left: 2rem;
     }
 
     #availabilityContainer{
         flex-direction: column;
         height: 100%;
+        align-items: center;
+        width: 100%
     }
 
     #aboutMeTextandButton{
@@ -204,6 +207,8 @@ p{
 
     #availabilityContainer{
         flex-direction: column;
+        padding-left: 1rem;
+        
     }
 
 
@@ -270,6 +275,7 @@ p{
         justify-content: left;
         justify-items: center;
         gap: 48px;
+        padding-left: 0;
     }
 
     #iAm{
