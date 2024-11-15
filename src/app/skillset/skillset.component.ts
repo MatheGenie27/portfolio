@@ -34,6 +34,5 @@ export class SkillsetComponent implements OnInit{
     });
 
     this.skills = SKILLS;
-    console.log(this.skills);
   }  
 }

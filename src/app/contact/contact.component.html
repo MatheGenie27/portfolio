@@ -14,17 +14,17 @@
             <div id="contactFormContainer">
                 <form id="contactForm" #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
                     
-                    <input [(ngModel)]="contactData.name" class="input" name="name" type="text" id="name" placeholder="Your name..." required>
+                    <input [(ngModel)]="contactData.name" class="input" name="name" type="text" id="name" placeholder="Your name..." autocomplete="off" required>
 
                     
-                    <input [(ngModel)]="contactData.email" class="input" type="email" id="email" name="email" placeholder="Your email..." required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
+                    <input [(ngModel)]="contactData.email" class="input" type="email" id="email" name="email" placeholder="Your email..." autocomplete="off" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
 
                     
-                    <textarea [(ngModel)]="contactData.message"  class="input" id="message" name="message" placeholder="write something...." required>
+                    <textarea [(ngModel)]="contactData.message"  class="input" id="message" name="message" placeholder="write something...." autocomplete="off" required>
                     </textarea>
                     <div id="checkBoxRow">
                         <input type="checkbox" name="privacyCheckbox" id="privacyCheckbox" required>
-                        <label id="checkboxLabel" for="checkbox">I've read the <a href="assets/policy.html" target="_blank" rel="noopener norefferer">privacy policy</a> and agree to the processing of my data as outlined</label>
+                        <label id="checkboxLabel" for="privacyCheckbox">I've read the <a href="assets/policy.html" target="_blank" rel="noopener norefferer">privacy policy</a> and agree to the processing of my data as outlined</label>
 
                     </div>
 
