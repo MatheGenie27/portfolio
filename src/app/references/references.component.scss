@@ -8,37 +8,88 @@
     max-width: 1440px; /* Optional: Maximale Breite festlegen */
     margin: 0 auto; /* Zentriert die Komponente innerhalb des übergeordneten Containers */
     background: linear-gradient(128.94deg, #5988FF -33.96%, #5988FF 36.71%, #0043F0 112.25%);
+    height: 532px;
+    color: white;
 
   }
 
+  #referencesContainer{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap:66px;
+  }
+
+  #refHeaderContainer{
+    margin-top: 47px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    
+  }
+
+
+  h2{
+    font-size: 45px;
+    line-height: 63.45px;
+  }
+
+  p{
+    font-size: 32px;
+    line-height: 45.12px;
+  }
+
+  #testimonialContainer{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  :host ::ng-deep .carousel-control-prev,
+:host ::ng-deep .carousel-control-next {
+  top: 90%; /* Verschiebt die Pfeile weiter nach unten */
+  transform: translateY(-50%); /* Zentriert sie auf der neuen Höhe */
+}
+
+:host ::ng-deep ngb-carousel {
+  border: none; /* Debug: um sicherzustellen, dass es greift */
+  width: 100%;
+  max-width: 1035px; 
+}
+
+:host ::ng-deep .carousel-inner {
+  display: flex;
+  
+}
+
+@media (max-width: 768px) {
+  #testimonialContainer{
+    display: flex;
+    justify-content: center;
+  }
+
+  h2{
+    font-size: 36px;
+    line-height: 50.76px;
+  }
+
+  p{
+    font-size: 1rem;
+    line-height: 22.56px;
+  }
+
+}
+
+
+
+
+
+
+
+
   /* Für Handys und Tablets im Portrait- und Landscape-Modus */
 
-/* Handys im Portrait- und Landscape-Modus (maximale Breite von 600px) */
-@media (max-width: 600px) {
-  /* Styles für Handys */
-}
-
-@media (max-width: 600px) and (orientation: landscape) {
-  /* Styles für Handys im Querformat */
-}
-
-/* Tablets im Portrait- und Landscape-Modus (zwischen 600px und 768px) */
-@media (max-width: 768px) and (min-width: 600px) {
-  /* Styles für Tablets */
-}
-
-@media (max-width: 768px) and (min-width: 600px) and (orientation: landscape) {
-  /* Styles für Tablets im Querformat */
-}
-
-/* Für Laptops und Desktops im Landscape-Modus */
-
-/* Laptops im Landscape-Modus (zwischen 768px und 1024px) */
-@media (max-width: 1024px) and (min-width: 768px) and (orientation: landscape) {
-  /* Styles für Laptops im Querformat */
-}
-
-/* Desktops im Landscape-Modus (ab 1024px) */
-@media (min-width: 1024px) and (orientation: landscape) {
-  /* Styles für Desktops im Querformat */
-}
