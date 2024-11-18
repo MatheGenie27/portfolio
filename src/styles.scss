@@ -132,6 +132,60 @@ body {
   }
   
 
+  .secButton{
+    position: relative;
+    box-sizing: border-box;
+    width: fit-content;
+    height: 58px;
+    padding: 15px 30px;
+    border-radius: 10px;
+    border: solid 2px rgba(89, 136, 255, 1);
+    font-size: 23px;
+    line-height: 27.6px;
+    font-weight: 400;
+    color: white;
+    overflow: hidden;
+    margin-bottom: 10px;
+    transition: all 0.125s ease-in-out;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(89, 136, 255, 1);
+  
+    &:hover {
+      cursor: pointer;
+      color: white;
+      padding: 20px 40px;
+      height: 68px;
+      margin-bottom: 0px;
+    }
+  
+    &:hover::before {
+      width: 120%; /* Breiter als der Button, um sicherzustellen, dass die Diagonale voll ist */
+    }
+  
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -10%; /* Startet leicht außerhalb des Buttons */
+      width: 0;
+      height: 150%; /* Größer als die Höhe, um die Schräge abzudecken */
+      background: radial-gradient(74.22% 74.22% at 19.79% 22.42%, #5988FF 6.25%, #5988FF 51.56%, #0043F0 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+
+      transition: width 0.125s ease-in-out;
+      z-index: 0;
+      transform: skewX(-20deg); /* Schräge Füllung */
+    }
+  
+    & span {
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+
   @media (max-width: 768px){
 .mainButton{
     height: 54px;
@@ -140,6 +194,15 @@ body {
     &:hover{
       height:58px;
     }
+}
+
+.secButton{
+  height: 54px;
+  margin-bottom: 4px;  
+
+  &:hover{
+    height:58px;
+  }
 }
 
   }

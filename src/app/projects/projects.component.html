@@ -1,9 +1,23 @@
 <div class="component-container">
     <div id="projectsContainer">
 
-    <p>projects works!</p>
-    <div class="mainButton"id="testButton">
-        <span>TestButton</span>
-    </div>
+    
+        <div id="headerContainer">
+                <h2>{{title}}</h2>
+                <p>{{sectionText}}</p>
+        </div>
+
+        <div id="actualProjects">
+            <ng-container *ngFor="let project of projects; let i = index">
+              <app-project
+                 [project]="project"
+                 [className]="i % 2 === 0 ? 'row' : 'row-reverse'">
+                 </app-project>
+            </ng-container>
+        </div>
+
+
+
+    
     </div>
 </div>

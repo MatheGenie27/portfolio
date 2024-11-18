@@ -1,0 +1,163 @@
+
+
+.project{
+    display:flex;
+    gap: clamp(16px, 3vw,88px);
+    flex-wrap: nowrap;
+    
+}
+
+.row {
+    
+    flex-direction: row;
+  }
+  
+  .row-reverse {
+    
+    flex-direction: row-reverse;
+  }
+
+.imageContainer {
+    width: 50%;
+    max-width: clamp(324px, 54vw, 670px);
+    height: auto;
+    position: relative;
+}
+
+.image {
+    width: 100%; /* Passt sich der Breite des Containers an */
+    height: auto; /* Beibehaltung des Seitenverhältnisses */
+    background-color: cadetblue;
+    object-fit: contain; /* Zeigt das gesamte Bild an */
+    box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.15);
+    transition: transform 0.1s ease-in, box-shadow 0.3s ease; /* Animiert die Skalierung */
+}
+
+.imageContainer:hover .image {
+    cursor: pointer;
+    transform: scale(1.1); /* Vergrößert das Bild */
+    box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.3); /* Größeres Box-Shadow beim Hover */
+}
+
+
+.projectText{
+    display: flex;
+    flex-direction: column;
+    gap:  15px;
+    width: 40%;
+    align-items: flex-start;
+    justify-content: end;
+}
+
+.row-reverse .projectText {
+    align-items: flex-end;
+}
+
+.row-reverse .projectDescription {
+    text-align: end;
+}
+
+.row-reverse .buttonRow {
+    flex-direction: row-reverse;
+}
+
+.projectTitle{
+    font-family: 'Baloo';
+    font-weight: 400;
+    font-size: 45px;
+    line-height: 54px;
+    color: rgba(89, 136, 255, 1);
+}
+
+.projectTechnologies{
+    font-size: 23px;
+    line-height: 27.6px;
+    color:  rgba(89, 136, 255, 1);
+}
+
+.projectDescription{
+    font-size: 1rem;
+    line-height: 19.2px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.buttonRow{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 35px;
+}
+
+.secButton{
+    display: none;
+}
+
+@media (max-width: 768px){
+    
+    .project{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap:45px;
+    }
+
+
+    .imageContainer {
+        width: 100%;
+        max-width: clamp(324px, 54vw, 670px); /* Gleicher Wert wie beim Bild */
+        height: fit-content;
+        position: relative;
+        overflow: hidden; /* Verhindert, dass Inhalte herausragen */
+        padding: 0;
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.15); /* Schatten am Container */
+    }
+    
+    .image {
+        width: 100%; /* Bild passt sich der Breite des Containers an */
+        height: auto;
+        max-width: 100%; /* Überschreitet die Containerbreite nicht */
+        display: block;
+        margin: 0 auto;
+        object-fit: cover;
+    
+        &:hover {
+            cursor: default;
+        }
+    }
+    
+
+    .projectText{
+        align-items: center;
+        max-width: 500px;
+        width: 100%;
+    }
+
+    .buttonRow{
+        flex-direction: row-reverse;
+        max-width: 500px;
+    }
+    
+    .secButton{
+    display: inline-flex;
+    }
+
+    .imageContainer:hover .image {
+        transform: none;
+        box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.15);
+        cursor: default;
+    }
+
+}
+
+
+  
+@media (max-width: 500px){
+    .buttonRow{
+        max-width: 100%;
+    }
+
+
+}

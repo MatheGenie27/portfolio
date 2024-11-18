@@ -78,6 +78,10 @@
 
 h2{
     color: rgba(89, 136, 255, 1);
+    font-size: clamp(4rem,10vw, 7.56rem);
+    font-weight: 400;
+    margin: 0;
+    line-height: clamp(4rem, 10vw, 7.56rem);
 }
 
 p{
@@ -180,6 +184,14 @@ p{
   }
 
   @media (max-width: 900px) {
+
+    h2{
+        color: rgba(89, 136, 255, 1);
+        font-size: clamp(4rem,5vw, 7.56rem);
+        font-weight: 400;
+        margin: 0;
+        line-height: clamp(4rem, 5vw, 7.56rem);
+    }
     
     #availabilityIconRow{
         flex-direction: column;
@@ -264,7 +276,7 @@ p{
         display: flex;
         width: 100%;
         flex-direction: column;
-        justify-items: center;
+        align-items: center;
         justify-content: center;
         gap: 60px;
         margin-top: 137px;

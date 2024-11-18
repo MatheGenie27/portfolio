@@ -8,34 +8,68 @@
     background-color: white;
   }
 
+  #projectsContainer{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    
+    padding-top: 140px;
+    padding-bottom: 140px;
+    padding-left: 77px;
+    padding-right: 77px;
+
+  }
+
+  #headerContainer{
+    max-width: clamp(324px, 43vw, 630px);
+    width: 100%;
+
+    padding-bottom: 40px;
+    
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  #actualProjects{
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+  }
+
+  h2{
+    font-size: 96px;
+    line-height: 96px;
+    font-weight: 400;
+    color: rgba(89, 136, 255, 1);
+  }
+
+
+
   /* Für Handys und Tablets im Portrait- und Landscape-Modus */
 
-/* Handys im Portrait- und Landscape-Modus (maximale Breite von 600px) */
-@media (max-width: 600px) {
-  /* Styles für Handys */
-}
+  @media (max-width: 768px){
 
-@media (max-width: 600px) and (orientation: landscape) {
-  /* Styles für Handys im Querformat */
-}
+    h2{
+      font-size: 64px;
+      line-height: 76.8px;
+    }
 
-/* Tablets im Portrait- und Landscape-Modus (zwischen 600px und 768px) */
-@media (max-width: 768px) and (min-width: 600px) {
-  /* Styles für Tablets */
-}
+    #projectsContainer{
+      padding-left: 1rem;
+      padding-right: 1rem;
+      justify-content: center;
+      align-items: center;
+    }
 
-@media (max-width: 768px) and (min-width: 600px) and (orientation: landscape) {
-  /* Styles für Tablets im Querformat */
-}
+    #headerContainer{
+      max-width: 500px;
+      width: 100%;
+    }
 
-/* Für Laptops und Desktops im Landscape-Modus */
 
-/* Laptops im Landscape-Modus (zwischen 768px und 1024px) */
-@media (max-width: 1024px) and (min-width: 768px) and (orientation: landscape) {
-  /* Styles für Laptops im Querformat */
-}
+  }
 
-/* Desktops im Landscape-Modus (ab 1024px) */
-@media (min-width: 1024px) and (orientation: landscape) {
-  /* Styles für Desktops im Querformat */
-}
