@@ -17,7 +17,7 @@ export const PROJECTS: Project[] = [
         description:"Jump, run and throw game based on object oriented approach. Help Pepe to find coinds and tabasco salsa to fight against the crazy hen.",
         liveLink: "https://bjoern-bressler.de/developer/projects/el-pollo-loco/",
         gitHubLink:"https://github.com/MatheGenie27/el-pollo-loco2",
-        imagePath:"/assets/img/elPolloLocoRedux.png"
+        imagePath:"assets/img/elPolloLocoRedux.png"
     }
 
 

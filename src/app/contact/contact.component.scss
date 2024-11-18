@@ -158,14 +158,14 @@
   
     .img-hover {
       opacity: 0;
-      transform: scale(0.8);
+      transform: scale(1);
     }
   
     // Hover-Effekt: Erstes Bild ausblenden, zweites Bild einblenden
     &:hover {
       .img-normal {
         opacity: 0;
-        transform: scale(1.2);
+        transform: scale(1);
       }
   
       .img-hover {

@@ -14,8 +14,10 @@
     display: flex;
     width: 100%;
     height: 7.3125rem;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    padding-left: 100px;
+    padding-right: 83.5px;
   }
 
   #navBar{
@@ -32,14 +34,39 @@
     background-color: white;
   }
 
+  #headerLogo:hover{
+    cursor: pointer;
+  }
+
   #burgerMenuIcon{
     display: none;
+  }
+
+  .navElement{
+    display: flex;
+    width: 120px;
+    height: 32px;
+    align-items: center;
+    justify-content: center;
   }
 
   a{
     text-decoration: none;
     color: rgba(89, 136, 255, 1);
+    transition: all linear 0.125s;
+    font-size: 23px;
+    line-height: 27.6px;
+    max-width: 120px;
+    width: 100%;
+    height: 32px;
+    text-align: center;
   }
+
+  .navElement a:hover{
+    font-weight: 700;
+  }
+
+
 
   /* Für Handys und Tablets im Portrait- und Landscape-Modus */
   @media (max-width: 768px){
