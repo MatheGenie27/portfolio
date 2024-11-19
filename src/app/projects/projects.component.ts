@@ -54,7 +54,7 @@ export class ProjectsComponent {
 
   private updateTexts(): void {
     if (this.currentLanguage === 'de') {
-      this.title = 'Meine Arbeit';
+      this.title = 'Meine Projekte';
       this.sectionText = 'Entdecke hier eine Auswahl meiner Arbeiten - Interagiere mit Projekten, um meine Fähigkeiten in Aktion zu sehen';
     } else if (this.currentLanguage === 'en') {
       this.title = 'My work';
