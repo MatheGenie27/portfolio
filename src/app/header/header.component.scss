@@ -20,6 +20,33 @@
     padding-right: 83.5px;
   }
 
+  #languageButton{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+   
+    &:hover{
+      cursor: pointer;
+    }
+
+  }
+
+  #bubbleImage{
+    width: 100%;
+    height:100%;
+  }
+
+  #languageLogo{
+    position: absolute;
+    width: 80%;
+    height: auto;
+    top: 1px;
+    left: 3.5px;
+  }
+
   #navBar{
     display: flex;
     justify-content: center;
@@ -28,7 +55,7 @@
 
   }
 
-  #headerLogo{
+  .headerLogo{
     width:68px;
     height:68px;
     background-color: white;
@@ -40,6 +67,7 @@
 
   #burgerMenuIcon{
     display: none;
+    z-index: 1100;
   }
 
   .navElement{
@@ -68,10 +96,91 @@
 
 
 
+
+
+  #navModal {
+    position: fixed;
+    top: 0;
+    left: 100%; /* Ausgangszustand: außerhalb des Bildschirms */
+    width: 100%; /* Volle Breite */
+    height: 100%; /* Volle Höhe */
+    
+    
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5); /* Schatten */
+    transition: left 0.3s ease-in-out; /* Sanfter Übergang */
+    z-index: 1000; /* Modal über andere Inhalte */
+
+    background: linear-gradient(179.99deg, rgba(255, 255, 255, 0.8) 12.89%, rgba(234, 240, 255, 0.8) 91.39%);
+
+    
+    
+  }
+  
+  /* Aktiv-Modus (sichtbar) */
+  #navModal.active {
+    left: 0; /* Modal wird sichtbar */
+  }
+
+
+  #logoRow{
+    display: flex;
+    width: 100%;
+    height: 7.3125rem;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 100px;
+    padding-right: 83.5px;
+  }
+
+
+  #languageButton2{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+   
+    &:hover{
+      cursor: pointer;
+    }
+
+  }
+
+  #bubbleImage2{
+    width: 100%;
+    height:100%;
+  }
+
+  #languageLogo2{
+    position: absolute;
+    width: 80%;
+    height: auto;
+    top: 1px;
+    left: 3.5px;
+  }
+
+  #headerLogo2{
+    background-color: aqua;
+  }
+
+  #navBar2{
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10%;
+    height: 100%;
+    padding-top: 20%;
+
+  }
+
+
+
   /* Für Handys und Tablets im Portrait- und Landscape-Modus */
   @media (max-width: 768px){
     
-    #headerContainer{
+    #headerContainer, #logoRow{
       height: 100px;
       padding-left: 1rem;
       padding-right: 1rem;
@@ -94,6 +203,13 @@
       }
     }
 
+    #modalCloseButton{
+      display: block;
+      width: 50px;
+      height: 50px;
+    }
+
+    
     
   }
 

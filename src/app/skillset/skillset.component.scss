@@ -44,7 +44,7 @@
 h2{
     color: white;
     margin-top:56px;
-    font-size: 96px;
+    font-size: clamp(64px,12vw,96px);
     line-height: 96px;
 }
 

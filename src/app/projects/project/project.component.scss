@@ -4,6 +4,8 @@
     display:flex;
     gap: clamp(16px, 3vw,88px);
     flex-wrap: nowrap;
+    width:100%;
+    margin: 0;
     
 }
 
@@ -22,6 +24,7 @@
     max-width: clamp(324px, 54vw, 670px);
     height: auto;
     position: relative;
+    padding:0;
 }
 
 .image {
