@@ -47,6 +47,9 @@ export class HeaderComponent {
       this.currentLanguage = language;
       this.updateTexts();
     });
+
+    this.currentLanguage = 'en'; // Standard: Englisch
+    this.changeLanguage(this.currentLanguage);
   }
 
 
