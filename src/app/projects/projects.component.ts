@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { LanguageService } from '../services/language.service';
 import { Project } from './project/project.model';
-import { PROJECTS } from './project/projects.data';
+import { PROJECTS_DE } from './project/projects.data';
+import { PROJECTS_EN } from './project/projects.data';
 import { ProjectComponent } from './project/project.component';
 import { CommonModule } from '@angular/common';
 
@@ -17,7 +18,7 @@ export class ProjectsComponent {
 
 
 
-  currentLanguage: string = 'de';
+  currentLanguage: string = 'en';
   
   title: string = 'My work';
   sectionText: string = 'Explore a selection of my work here - Interact with projects to see my skills in action';
@@ -34,10 +35,34 @@ export class ProjectsComponent {
     // Sprache abonnieren
     this.languageService.language$.subscribe(language => {
       this.currentLanguage = language;
+      this.updateTexts();
+      this.initializeProjects(language);
     });
 
     // Initialisiere Originaldaten
-    this.projects = PROJECTS; // Initiale Gruppierung
+    this.initializeProjects(this.currentLanguage);
+    
+  }
+
+  private initializeProjects(language: string): void {
+    if (language === 'de') {
+      this.projects = PROJECTS_DE;
+    } else {
+      this.projects = PROJECTS_EN; // Fallback: Englisch
+    }
+  }
+
+  private updateTexts(): void {
+    if (this.currentLanguage === 'de') {
+      this.title = 'Meine Arbeit';
+      this.sectionText = 'Entdecke hier eine Auswahl meiner Arbeiten - Interagiere mit Projekten, um meine Fähigkeiten in Aktion zu sehen';
+    } else if (this.currentLanguage === 'en') {
+      this.title = 'My work';
+      this.sectionText = 'Explore a selection of my work here - Interact with projects to see my skills in action';
+    } else {
+      this.title = 'My work';
+      this.sectionText = 'Explore a selection of my work here';
+    }
   }
 
   

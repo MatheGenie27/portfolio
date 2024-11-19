@@ -3,10 +3,10 @@
   <div class="circle-background-small"></div>
   <div id="aboutMeContainer">
     <div id="letsWorkContainer">
-      <h2>Let's work together</h2>
+      <h2>{{headertitle}}</h2>
 
       <div id="availabilityContainer">
-        <div id="iAm">I am</div>
+        <div id="iAm">{{headertext}}</div>
 
         <div id="availabilityIconRow">
           <div
@@ -20,7 +20,7 @@
               class="availabilityIconsImgs"
               [src]="locationIconPath"
             />
-            <div class="availybilityTexts">located in Kaiserslautern</div>
+            <div class="availybilityTexts">{{locationText}}</div>
           </div>
           <div
             id="remote"
@@ -35,7 +35,7 @@
                 [src]="remoteIconPath"
               />
             </div>
-            <div id="remoteTxt" class="availybilityTexts">open to work remote</div>
+            <div id="remoteTxt" class="availybilityTexts">{{remoteText}}</div>
           </div>
           <div
             id="relocate"
@@ -46,7 +46,7 @@
           <div id="relocateImgContainer">
             <img class="availabilityIconsImgs" [src]="relocateIconPath" />
             </div>
-            <div class="availybilityTexts">not open to relocate</div>
+            <div class="availybilityTexts">{{relocateText}}</div>
           </div>
         </div>
       </div>
@@ -54,16 +54,16 @@
     <div id="aboutMeTextandButton">
       <div id="aboutMeText">
         <p>
-          I am a Front-End Developer based in Kaiserslautern, Germany. I enjoy helping designers and companies bring their ideas to life. I am eager to advance my developer career by securing a position as a Junior Web Developer. My strong problem-solving skills and passion for programming make me a valuable addition to any team.
+          {{aboutText}}
         </p>
-        <p>If you believe I’d be a great fit for your projects, feel free to contact me!</p>
+        <p>{{aboutText2}}</p>
       </div>
       <div
         (click)="onScrollToContact()"
         id="contactRefButton"
         class="mainButton"
       >
-        <span>Send a message</span>
+        <span>{{messageButton}}</span>
       </div>
     </div>
   </div>

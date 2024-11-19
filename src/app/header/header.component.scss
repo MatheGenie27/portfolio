@@ -41,10 +41,11 @@
 
   #languageLogo{
     position: absolute;
-    width: 80%;
+    width: 79%;
     height: auto;
-    top: 1px;
-    left: 3.5px;
+    top: 0.5px;
+    left: 4px;
+    padding:1px;
   }
 
   #navBar{
@@ -138,8 +139,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 35px;
-    height: 35px;
+    width: 50px;
+    height: 50px;
    
     &:hover{
       cursor: pointer;
@@ -154,10 +155,11 @@
 
   #languageLogo2{
     position: absolute;
-    width: 80%;
+    width: 79%;
     height: auto;
     top: 1px;
-    left: 3.5px;
+    left: 5px;
+    padding:1px;
   }
 
   #headerLogo2{

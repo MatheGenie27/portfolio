@@ -2,33 +2,34 @@
 
     <div #contactContainer id="contactContainer">
             <div id="contactTextContainer">
-                <h2>Contact</h2>
-                <h3>Got a problem to solve?</h3>
+                <h2>{{header}}</h2>
+                <h3>{{catch}}</h3>
                 <p>
-                    Contact me through this form. I am excited to hear from you, learn about your ideas, and contribute to your projects with my skills and dedication.
+                    {{text}}
+                    
                 </p>
                 <p id="cta">
-                    Need a Frontend Developer? <span id="ctaBold">Contact me!</span>
+                    {{callToAction}} <span id="ctaBold">{{callToAction2}}</span>
                 </p>
             </div>
             <div id="contactFormContainer">
                 <form id="contactForm" #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
                     
-                    <input [(ngModel)]="contactData.name" class="input" name="name" type="text" id="name" placeholder="Your name..." autocomplete="off" required>
+                    <input [(ngModel)]="contactData.name" class="input" name="name" type="text" id="name" [placeholder]="inputNamePlaceholder" autocomplete="off" required>
 
                     
-                    <input [(ngModel)]="contactData.email" class="input" type="email" id="email" name="email" placeholder="Your email..." autocomplete="off" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
+                    <input [(ngModel)]="contactData.email" class="input" type="email" id="email" name="email" [placeholder]="inputEmailPlaceholder" autocomplete="off" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
 
                     
-                    <textarea [(ngModel)]="contactData.message"  class="input" id="message" name="message" placeholder="write something...." autocomplete="off" required>
+                    <textarea [(ngModel)]="contactData.message"  class="input" id="message" name="message" [placeholder]="inputMessagePlaceholder" autocomplete="off" required>
                     </textarea>
                     <div id="checkBoxRow">
                         <input type="checkbox" name="privacyCheckbox" id="privacyCheckbox" required>
-                        <label id="checkboxLabel" for="privacyCheckbox">I've read the <a href="assets/policy.html" target="_blank" rel="noopener norefferer">privacy policy</a> and agree to the processing of my data as outlined</label>
+                        <label id="checkboxLabel" for="privacyCheckbox">{{privaceLabel1}} <a href="assets/policy.html" target="_blank" rel="noopener norefferer">{{privacyLinkText}}</a> {{privacyLabel2}}</label>
 
                     </div>
 
-                    <button class="mainButton" type="submit" ><span>Say hello ;)</span></button>
+                    <button class="mainButton" type="submit" ><span>{{buttonText}}</span></button>
                 </form>
             </div>
             

@@ -14,6 +14,7 @@ export class HeaderComponent {
   isNavModalOpen=false;
   showCloseButtonInModal = false;
   headerHeight= 70;
+  currentLanguage: string = 'en';
 
   icons = [
     'assets/icons/icon0.png',
@@ -27,9 +28,11 @@ export class HeaderComponent {
   animationDirection = "forward";
 
 
-
+  languageIconPath = 'assets/img/united-kingdom.png'
 
   aboutMe = 'About me';
+  skills = 'Skill set';
+  work = 'My Work'
 
 
 
@@ -37,8 +40,38 @@ export class HeaderComponent {
 
   }
 
+
+  ngOnInit(): void {
+    // Sprache abonnieren
+    this.languageService.language$.subscribe(language => {
+      this.currentLanguage = language;
+      this.updateTexts();
+    });
+  }
+
+
   changeLanguage(newLanguage: string){
     this.languageService.setLanguage(newLanguage);
+    
+  }
+
+
+
+  toggleLanguage(): void {
+    const newLanguage = this.currentLanguage === 'en' ? 'de' : 'en';
+    this.changeLanguage(newLanguage);
+    this.changeIcon(newLanguage);
+  }
+
+
+  changeIcon(newLanguage: string): void {
+    if (newLanguage === 'en') {
+      this.languageIconPath = 'assets/img/united-kingdom.png'; // Icon für Englisch setzen
+    } else if (newLanguage === 'de') {
+      this.languageIconPath = 'assets/img/german-flag.png'; // Icon für Deutsch setzen
+    } else {
+      this.languageIconPath = 'assets/img/united-kingdom.png'; // Fallback-Icon, falls notwendig
+    }
   }
 
 
@@ -83,6 +116,26 @@ onScroll(): void {
   const scrollPosition = window.scrollY || document.documentElement.scrollTop;
   this.showCloseButtonInModal = scrollPosition > this.headerHeight;
 }
+
+
+
+private updateTexts(): void {
+  if (this.currentLanguage === 'de') {
+    this.aboutMe = 'Über mich';
+    this.skills = 'Fähigkeiten';
+    this.work = 'Projekte';
+  } else if (this.currentLanguage === 'en') {
+    this.aboutMe = 'About me';
+    this.skills = 'Skill set';
+    this.work = 'My Work';
+  } else {
+    // Fallback-Sprache (optional)
+    this.aboutMe = 'About me';
+    this.skills = 'Skill set';
+    this.work = 'My Work';
+  }
+}
+
 
 
 }

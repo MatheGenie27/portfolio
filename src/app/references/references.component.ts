@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap'; 
 import { TestimonialComponent } from './testimonial/testimonial.component';
 import { Testimonial } from './testimonial-model';
-import { REFRENCES } from './references.data';
+import { REFERENCES_EN } from './references.data';
+import { REFERENCES_DE } from './references.data';
 import { LanguageService } from '../services/language.service';
 
 @Component({
@@ -14,7 +15,7 @@ import { LanguageService } from '../services/language.service';
   styleUrls: ['./references.component.scss'], // Korrektur hier
 })
 export class ReferencesComponent implements OnInit {
-  currentLanguage: string = 'de';
+  currentLanguage: string = 'en';
   title = "References";
   header = "Need a teamplayer?";
   subheader = "Here what my colleagues said about me";
@@ -28,12 +29,27 @@ export class ReferencesComponent implements OnInit {
     // Sprache abonnieren
     this.languageService.language$.subscribe(language => {
       this.currentLanguage = language;
+      this.updateTexts();
+      this.initializeReferences(language);
     });
 
-    // Initialisiere Originaldaten
-    this.originalReferences = REFRENCES;
-    this.references = this.groupReferences(this.originalReferences); // Initiale Gruppierung
+    this.initializeReferences(this.currentLanguage);
+
+    
   }
+
+  private initializeReferences(language: string): void {
+    if (language === 'de') {
+      this.originalReferences = REFERENCES_DE;
+    } else {
+      this.originalReferences = REFERENCES_EN; // Fallback: Englisch
+    }
+  
+    // Gruppiere die Referenzen nach Sprache
+    this.references = this.groupReferences(this.originalReferences);
+  }
+
+
 
   // Gruppiert Testimonials basierend auf der Bildschirmbreite
   groupReferences(references: Testimonial[]): Testimonial[][] {
@@ -59,4 +75,22 @@ export class ReferencesComponent implements OnInit {
   onResize(event: Event): void {
     this.references = this.groupReferences(this.originalReferences); // Gruppierung aktualisieren
   }
+
+  private updateTexts(): void {
+    if (this.currentLanguage === 'de') {
+      this.title = 'Referenzen';
+      this.header = 'Brauchen Sie einen Teamplayer?';
+      this.subheader = 'Hier ist, was meine Kollegen über mich gesagt haben';
+    } else if (this.currentLanguage === 'en') {
+      this.title = 'References';
+      this.header = 'Need a teamplayer?';
+      this.subheader = 'Here what my colleagues said about me';
+    } else {
+      // Fallback-Sprache (optional, Englisch als Standard)
+      this.title = 'References';
+      this.header = 'Need a teamplayer?';
+      this.subheader = 'Here what my colleagues said about me';
+    }
+  }
+  
 }

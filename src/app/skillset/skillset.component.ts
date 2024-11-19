@@ -15,7 +15,7 @@ import { CommonModule } from '@angular/common';
 })
 export class SkillsetComponent implements OnInit{
 
-  currentLanguage: string = 'de';
+  currentLanguage: string = 'en';
 
   title = 'Skill set';
   skills: Skill[] = [];
@@ -30,9 +30,24 @@ export class SkillsetComponent implements OnInit{
   ngOnInit():void {
     this.languageService.language$.subscribe(language => {
       this.currentLanguage = language;
+      this.updateTexts();
       
     });
 
     this.skills = SKILLS;
   }  
+
+  private updateTexts(): void {
+    if (this.currentLanguage === 'de') {
+      this.title = 'Fähigkeiten';
+    } else if (this.currentLanguage === 'en') {
+      this.title = 'Skill set';
+    } else {
+      // Fallback-Sprache (optional, Englisch als Standard)
+      this.title = 'Skill set';
+    }
+  }
+  
+
+
 }

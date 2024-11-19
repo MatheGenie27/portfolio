@@ -7,18 +7,18 @@
             <img [src]="currentIcon" alt="Burgermenu Icon">
         </div>
         <div id="navBar">
-            <div id="languageButton">
+            <div id="languageButton" (click)="toggleLanguage()">
                 <img id="bubbleImage" src="assets/img/speech-bubble.png">
-                <img id="languageLogo" src="/assets/img/united-kingdom.png">
+                <img id="languageLogo" [src]="languageIconPath">
             </div>
             <div id="navAbout" class="navElement">
                 <a href="#aboutMe">{{aboutMe}}</a>
             </div>
             <div id="navSkill" class="navElement">
-                <a href="#skillsetContainer">Skill set</a>
+                <a href="#skillsetContainer">{{skills}}</a>
             </div>
             <div id="navMyWork" class="navElement">
-                <a href="#projectsContainer">My Work</a>
+                <a href="#projectsContainer">{{work}}</a>
             </div>
         </div>
 
@@ -34,18 +34,18 @@
         </div>
         
         <div id="navBar2">
-            <div id="languageButton2">
+            <div id="languageButton2" (click)="toggleLanguage()">
                 <img id="bubbleImage2" src="assets/img/speech-bubble.png">
-                <img id="languageLogo2" src="/assets/img/united-kingdom.png">
+                <img id="languageLogo2" [src]="languageIconPath">
             </div>
             <div id="navAbout2" class="navElement2" (click)="closeNavModal()">
                 <a href="#aboutMe">{{aboutMe}}</a>
             </div>
             <div id="navSkill2" class="navElement2" (click)="closeNavModal()">
-                <a href="#skillsetContainer">Skill set</a>
+                <a href="#skillsetContainer">{{skills}}</a>
             </div>
             <div id="navMyWork2" class="navElement2" (click)="closeNavModal()">
-                <a href="#projectsContainer">My Work</a>
+                <a href="#projectsContainer">{{work}}</a>
             </div>
         </div>
         
