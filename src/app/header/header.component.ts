@@ -71,7 +71,7 @@ export class HeaderComponent {
     if (newLanguage === 'en') {
       this.languageIconPath = 'assets/img/united-kingdom.png'; // Icon für Englisch setzen
     } else if (newLanguage === 'de') {
-      this.languageIconPath = 'assets/img/german-flag.png'; // Icon für Deutsch setzen
+      this.languageIconPath = 'assets/img/german-flag-reworked.png'; // Icon für Deutsch setzen
     } else {
       this.languageIconPath = 'assets/img/united-kingdom.png'; // Fallback-Icon, falls notwendig
     }
