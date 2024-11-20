@@ -41,6 +41,28 @@
     gap: 10px;
   }
 
+  .socialMediaBox{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    
+
+  .socialMediaImage{
+      height:30px;
+      width: 30px;
+      transition:all ease-out 0.125s;
+  }
+
+  & .socialMediaImage:hover{
+    scale: 1.2;
+  }
+
+  }
+
+  
+
   #legalNoticeRow{
     
     display: flex;

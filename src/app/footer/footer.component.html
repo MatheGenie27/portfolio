@@ -8,19 +8,19 @@
                 &#64; Björn Breßler 2024
             </div>
             <div id="footerSocMediaContainer">
-                <div id="footerGithubLogo">
-                    <img id="footerGithubLogoIcon" src="assets/icons/githubIcon.svg">
-                </div>
-                <div id="footerMailLogo">
-                    <img id="footerMailLogoIcon" src="assets/icons/mailIcon.svg">
-                </div>
-                <div id="footerLILogo">
-                    <img id="footerLnLogoIcon" src="assets/icons/lnIcon.svg">
-                </div>
+                <a href="https://github.com/MatheGenie27" id="footerGithubLogo" class="socialMediaBox">
+                    <img class="socialMediaImage" id="footerGithubLogoIcon" src="assets/icons/githubIcon.svg">
+                </a>
+                <a href="mailto:info@bjoern-bressler.de" id="footerMailLogo" class="socialMediaBox">
+                    <img class="socialMediaImage" id="footerMailLogoIcon" src="assets/icons/mailIcon.svg">
+                </a>
+                <a href="" id="footerLILogo" class="socialMediaBox">
+                    <img class="socialMediaImage" id="footerLnLogoIcon" src="assets/icons/lnIcon.svg">
+                </a>
             </div>
         </div>
         <div id="legalNoticeRow">
-            <a href="assets/legalNotice.html" target="_blank">{{legalLinkText}}</a>
+            <a [href]="legalLinkHref" target="_blank">{{legalLinkText}}</a>
         </div>
     </div>
 </div>
