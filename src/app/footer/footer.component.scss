@@ -23,14 +23,18 @@
     justify-content: center;
     height: 18rem;
     gap: 1rem;
+    padding-left: 100px;
+    padding-right: 83.5px;
   }
 
   #footerUpperRow{
     
     width:100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
     
   }
 
@@ -70,6 +74,8 @@
     justify-content: center;
     align-items: center;
     font-size: 1rem;
+    padding-left:1rem;
+    padding-right: 1rem;
     
   }
 
