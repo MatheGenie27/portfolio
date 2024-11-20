@@ -1,5 +1,5 @@
 function goToOpener() {
-    console.log("Klick");
+   
     if (window.opener) {
         // Bringt das ursprüngliche Fenster in den Vordergrund
         window.opener.focus();
