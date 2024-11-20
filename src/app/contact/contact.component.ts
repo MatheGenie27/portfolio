@@ -26,6 +26,9 @@ export class ContactComponent implements OnInit, OnDestroy {
   }
 
   mailTest = false;
+  policyAccepted = false;
+
+  
 
   post = {
     endPoint: 'https://bjoern-bressler.de/developer/sendMail.php',
@@ -87,7 +90,12 @@ changeLanguage(newLanguage: string){
       this.languageService.setLanguage(newLanguage);
 }
 
+isFormValid(contactForm: any): boolean {
+  return contactForm.valid && this.policyAccepted;
+}
+
 onSubmit(ngForm: NgForm) {
+  if(this.isFormValid(ngForm)){
   if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
     this.http.post(this.post.endPoint, this.post.body(this.contactData))
       .subscribe({
@@ -104,6 +112,7 @@ onSubmit(ngForm: NgForm) {
 
     ngForm.resetForm();
   }
+}
 }
 
 

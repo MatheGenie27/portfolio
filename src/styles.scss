@@ -94,43 +94,75 @@ body {
     overflow: hidden;
     margin-bottom: 10px;
     transition: all 0.125s ease-in-out;
-
     display: inline-flex;
     align-items: center;
     justify-content: center;
     background: none;
   
+    // Hover-Effekt
     &:hover {
       cursor: pointer;
       color: white;
       padding: 20px 40px;
       height: 68px;
       margin-bottom: 0px;
-    }
   
-    &:hover::before {
-      width: 120%; /* Breiter als der Button, um sicherzustellen, dass die Diagonale voll ist */
+      &::before {
+        width: 120%; // Breiter als der Button, um die Diagonale zu füllen
+      }
     }
   
     &::before {
       content: "";
       position: absolute;
       top: 0;
-      left: -10%; /* Startet leicht außerhalb des Buttons */
+      left: -10%; // Startet leicht außerhalb des Buttons
       width: 0;
-      height: 150%; /* Größer als die Höhe, um die Schräge abzudecken */
-      background: radial-gradient(74.22% 74.22% at 19.79% 22.42%, #5988FF 6.25%, #5988FF 51.56%, #0043F0 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
-
+      height: 150%; // Größer als die Höhe, um die Schräge abzudecken
+      background: radial-gradient(
+        74.22% 74.22% at 19.79% 22.42%,
+        #5988ff 6.25%,
+        #5988ff 51.56%,
+        #0043f0 100%
+      );
       transition: width 0.125s ease-in-out;
       z-index: 0;
-      transform: skewX(-20deg); /* Schräge Füllung */
+      transform: skewX(-20deg); // Schräge Füllung
     }
   
-    & span {
+    span {
       position: relative;
       z-index: 1;
     }
+  
+    // Deaktivierter Zustand
+    &:disabled {
+      cursor: not-allowed;
+      background: rgba(200, 200, 200, 0.5);
+      color: rgba(150, 150, 150, 1);
+      border: solid 2px rgba(200, 200, 200, 1);
+      padding: 15px 30px;
+      height: 58px;
+      transition: none;
+  
+      &:hover {
+        padding: 15px 30px; // Keine Änderungen beim Hovern
+        height: 58px;
+        background: rgba(200, 200, 200, 0.5);
+        color: rgba(150, 150, 150, 1);
+        border: solid 2px rgba(200, 200, 200, 1);
+        margin-bottom: 10px;
+      }
+
+      &::before{
+        display: none;
+      }
+    }
   }
+  
+
+  
+  
   
 
   .secButton{
@@ -187,6 +219,17 @@ body {
   }
 
 
+  
+
+
+
+
+
+
+
+
+
+
   @media (max-width: 768px){
 .mainButton{
     height: 54px;
@@ -194,6 +237,16 @@ body {
 
     &:hover{
       height:58px;
+      
+    }
+
+    &:disabled{
+       height:54px;
+
+       &:hover{
+        margin-bottom: 4px;
+       height: 54px;
+       }
     }
 }
 

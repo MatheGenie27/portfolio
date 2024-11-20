@@ -53,6 +53,14 @@
     padding: 15px 25px;
     border-radius: 10px;
     border: solid 1px rgba(89, 136, 255, 1);
+    outline:none;
+    transition: all ease-in-out 0.125s;
+
+      &:focus {
+      // Farbe des Rahmens bei Fokus
+      border: 2px solid #5988ff;
+      padding: 14px 24px;
+    }
   }
 
 
@@ -64,6 +72,30 @@
     resize: none;
     height: 202px;
   }
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   h2,h3{
     color: rgba(89, 136, 255, 1);
@@ -133,6 +165,24 @@
   #checkboxLabel{
     font-size: 14px;
   }
+
+  button:disabled {
+    opacity: 1;
+    cursor: not-allowed;
+
+    &:hover{
+
+    }
+}
+
+
+
+
+
+
+
+
+
 
 
   #imageContainer {

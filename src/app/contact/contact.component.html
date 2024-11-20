@@ -24,12 +24,12 @@
                     <textarea [(ngModel)]="contactData.message"  class="input" id="message" name="message" [placeholder]="inputMessagePlaceholder" autocomplete="off" required>
                     </textarea>
                     <div id="checkBoxRow">
-                        <input type="checkbox" name="privacyCheckbox" id="privacyCheckbox" required>
+                        <input type="checkbox" name="privacyCheckbox" id="privacyCheckbox" [(ngModel)]="policyAccepted" required>
                         <label id="checkboxLabel" for="privacyCheckbox">{{privaceLabel1}} <a [href]="policyLink" target="_blank" >{{privacyLinkText}}</a> {{privacyLabel2}}</label>
 
                     </div>
 
-                    <button class="mainButton" type="submit" ><span>{{buttonText}}</span></button>
+                    <button class="mainButton" type="submit" [disabled]="!contactForm.valid" ><span>{{buttonText}}</span></button>
                 </form>
             </div>
             
