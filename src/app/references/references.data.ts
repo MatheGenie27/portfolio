@@ -1,6 +1,6 @@
 import { Testimonial } from "./testimonial-model";
 
-export const REFERENCES_EN: Testimonial[] = [
+export const TEST_REFERENCES_EN: Testimonial[] = [
     {
         id: 1,
         name: "Lena Schneider",
@@ -27,7 +27,7 @@ export const REFERENCES_EN: Testimonial[] = [
     }
 ];
 
-export const REFERENCES_DE: Testimonial[] = [
+export const TEST_REFERENCES_DE: Testimonial[] = [
     {
         id: 1,
         name: "Lena Schneider",
@@ -53,4 +53,14 @@ export const REFERENCES_DE: Testimonial[] = [
         testimonialText: '"Björn’s Wissen über Cloud-Technologien ist herausragend. Er hat eine skalierbare und kosteneffiziente Architektur entworfen, die alle Erwartungen übertroffen hat."'
     }
 ];
+
+export const REFERENCES_DE: Testimonial[] = [
+
+]
+
+export const REFERENCES_EN: Testimonial[] = [
+
+]
+
+
 
