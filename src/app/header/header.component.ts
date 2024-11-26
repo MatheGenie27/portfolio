@@ -1,11 +1,12 @@
 import { Component, HostListener } from '@angular/core';
 import { LanguageService } from '../services/language.service';
 import { CommonModule } from '@angular/common';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink, RouterLinkActive],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
@@ -42,14 +43,22 @@ export class HeaderComponent {
 
 
   ngOnInit(): void {
-    // Sprache abonnieren
-    this.languageService.language$.subscribe(language => {
-      this.currentLanguage = language;
+    
+      // Initiale Sprache laden
+      this.currentLanguage = this.languageService.currentLanguage;
       this.updateTexts();
-    });
+      this.changeIcon(this.currentLanguage);
+    
+      // Sprache abonnieren
+      this.languageService.language$.subscribe(language => {
+        this.currentLanguage = language;
+        this.updateTexts();
+        this.changeIcon(language);
+      });
+    
+    
 
-    this.currentLanguage = 'en'; // Standard: Englisch
-    this.changeLanguage(this.currentLanguage);
+    
   }
 
 
@@ -63,7 +72,7 @@ export class HeaderComponent {
   toggleLanguage(): void {
     const newLanguage = this.currentLanguage === 'en' ? 'de' : 'en';
     this.changeLanguage(newLanguage);
-    this.changeIcon(newLanguage);
+    
   }
 
 

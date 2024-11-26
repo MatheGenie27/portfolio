@@ -1,7 +1,7 @@
 <div class="component-container">
     <div id="footerContainer">
         <div id="footerUpperRow">
-            <a id="footerLogo" href="#headerContainer">
+            <a id="footerLogo" routerLink=" ">
                 Logo
             </a>
             <div id="footerCopyright">
@@ -20,7 +20,8 @@
             </div>
         </div>
         <div id="legalNoticeRow">
-            <a [href]="legalLinkHref" target="_blank">{{legalLinkText}}</a>
+            <a [routerLink]="legalLinkHref">{{legalLinkText}}</a>
+            <a [routerLink]="policyLink">{{privacyLinkText}}</a>
         </div>
     </div>
 </div>

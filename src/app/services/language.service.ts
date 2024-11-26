@@ -6,17 +6,29 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class LanguageService {
 
-  private languageSubject = new BehaviorSubject<string>('english');
+  private readonly STORAGE_KEY = "preferredLanguage";
+  private languageSubject = new BehaviorSubject<string>('en');
 
   language$ = this.languageSubject.asObservable();
 
-  setLanguage(newLanguage: string){
-    this.languageSubject.next(newLanguage);
+  setLanguage(newLanguage: string): void {
+    if (newLanguage !== this.languageSubject.getValue()) { // Sprache nur aktualisieren, wenn sie sich ändert
+      this.languageSubject.next(newLanguage); // Observable aktualisieren
+      localStorage.setItem('preferredLanguage', newLanguage); // Persistenz aktualisieren
+    }
   }
+  
+  
 
   get currentLanguage(): string{
     return this.languageSubject.getValue();
+    
   }
 
-  constructor() { }
+  constructor() {
+    const savedLanguage = localStorage.getItem(this.STORAGE_KEY);
+    const validLanguage = savedLanguage === 'en' || savedLanguage === 'de' ? savedLanguage : 'en';
+    this.languageSubject.next(validLanguage); // Initialisiere mit validierter Sprache
+  }
+  
 }

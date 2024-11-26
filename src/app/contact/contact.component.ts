@@ -4,11 +4,12 @@ import { Subscription } from 'rxjs';
 import { LanguageService } from '../services/language.service';
 import { FormsModule, NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, RouterLink, RouterLinkActive],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
@@ -57,7 +58,7 @@ export class ContactComponent implements OnInit, OnDestroy {
   privacyLabel2 = 'and agree to the processing of my data as outlined';
   buttonText ='Say hello ;)';
 
-  policyLink = 'assets/policy.html';
+  policyLink = 'privacy';
 
   constructor(private scrollService: ScrollService, private languageService: LanguageService){
     
@@ -131,7 +132,7 @@ private updateTexts(): void {
     this.privacyLinkText = 'Datenschutzerklärung';
     this.privacyLabel2 = 'gelesen und stimme der Verarbeitung meiner Daten gemäß dieser zu.';
     this.buttonText = 'Hallo sagen ;)';
-    this.policyLink ='assets/datenschutz.html';
+    this.policyLink ='datenschutz';
   } else if (this.currentLanguage === 'en') {
     this.header = 'Contact';
     this.text = 'Contact me through this form. I am excited to hear from you, learn about your ideas, and contribute to your projects with my skills and dedication.';
@@ -146,7 +147,7 @@ private updateTexts(): void {
     this.privacyLinkText = 'privacy policy';
     this.privacyLabel2 = 'and agree to the processing of my data as outlined.';
     this.buttonText = 'Say hello ;)';
-    this.policyLink = 'assets/policy.html';
+    this.policyLink = 'privacy';
   } else {
     // Fallback-Sprache (optional, Englisch als Standard)
     this.header = 'Contact';
@@ -162,7 +163,7 @@ private updateTexts(): void {
     this.privacyLinkText = 'privacy policy';
     this.privacyLabel2 = 'and agree to the processing of my data as outlined.';
     this.buttonText = 'Say hello ;)';
-    this.policyLink = 'assets/policy.html';
+    this.policyLink = 'privacy';
   }
 }
 
