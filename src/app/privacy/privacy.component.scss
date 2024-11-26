@@ -2,6 +2,10 @@
     margin: 0;
 }
 
+:host{
+  width: 100%;
+}
+
 body {
   
     scrollbar-width: none; /* Versteckt die Scrollbar in Firefox */
