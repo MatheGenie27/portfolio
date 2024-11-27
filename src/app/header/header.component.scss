@@ -5,7 +5,7 @@
     width: 100%; /* Setzt die Komponente auf volle Breite */
     max-width: 1440px; /* Optional: Maximale Breite festlegen */
     margin: 0 auto; /* Zentriert die Komponente innerhalb des übergeordneten Containers */
-    position: absolute;
+    position: initial;
     top:0;
     z-index: 4;
   }
@@ -13,11 +13,15 @@
   #headerContainer{
     display: flex;
     width: 100%;
+    max-width: 1440px;
     height: 7.3125rem;
     justify-content: space-between;
     align-items: center;
     padding-left: 100px;
     padding-right: 83.5px;
+    position: absolute;
+    top: 0;
+    z-index: 4;
   }
 
   #languageButton{
