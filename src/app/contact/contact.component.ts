@@ -60,6 +60,27 @@ export class ContactComponent implements OnInit, OnDestroy {
 
   policyLink = 'privacy';
 
+  inputNameLabel = 'Your name';
+  inputEmailLabel = 'Your email';
+  inputMessageLabel = 'Your message';
+  requiredTextName = 'Your name is required';
+  requiredTextEmail ='Your email is required';
+  requiredTextMessage='Your message is empty';
+  requiredTextPrivacy='Please accept the privacy policy'
+
+  isNameLabelVisible: boolean = false;
+  isEmailLabelVisible: boolean = false;
+  isMessageLabelVisible: boolean = false;
+
+  isNameValid: boolean = false;
+  isEmailValid: boolean = false;
+  isMessageValid: boolean = false;
+
+  nameChecked = false;
+  emailChecked = false;
+  messageChecked = false;
+  policyChecked = false;
+
   constructor(private scrollService: ScrollService, private languageService: LanguageService){
     
   
@@ -91,13 +112,145 @@ changeLanguage(newLanguage: string){
       this.languageService.setLanguage(newLanguage);
 }
 
+
+onNameFocus(): void{
+  this.isNameLabelVisible = true;
+}
+
+onNameBlur(): void {
+  if(!this.contactData.name){
+    this.isNameLabelVisible=false;
+  }
+  this.checkNameValidation();
+}
+
+checkNameValidation(){
+  this.nameChecked = true;
+  const nameFieldValue = this.contactData.name;
+    if (nameFieldValue && nameFieldValue.trim().length >= 3) {
+      this.isNameValid = true;
+    } else {
+      this.isNameValid = false;
+    }
+
+}
+
+onNameInput(event: any):void{
+  this.nameChecked = false;
+  if(event.target.value){
+    this.isNameLabelVisible = true;
+    this.nameChecked = false;
+  } else {
+    this.isNameLabelVisible = false;
+  }
+  this.checkNameValidation();
+}
+
+
+
+onEmailFocus(): void {
+  this.isEmailLabelVisible = true;
+}
+
+onEmailBlur(): void {
+  if (!this.contactData.email) {
+    this.isEmailLabelVisible = false;
+  }
+  this.checkEmailValidation()
+}
+
+checkEmailValidation(){
+  this.emailChecked = true;
+  
+  const emailFieldValue = this.contactData.email;
+  const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  
+    if (emailFieldValue && emailPattern.test(emailFieldValue)) {
+      this.isEmailValid = true;
+    } else {
+      this.isEmailValid = false;
+    }
+}
+
+onEmailInput(event: any): void {
+  this.emailChecked = false;
+  if (event.target.value) {
+    this.isEmailLabelVisible = true;
+    this.emailChecked = false;
+  } else {
+    this.isEmailLabelVisible = false;
+  }
+  this.checkEmailValidation();
+}
+
+
+onMessageFocus(): void {
+  this.isMessageLabelVisible = true;
+}
+
+onMessageBlur(): void {
+  if (!this.contactData.message) {
+    this.isMessageLabelVisible = false;
+  }
+  this.checkMessageValidation();
+}
+
+checkMessageValidation(){
+  this.messageChecked = true;
+
+  const messageFieldValue = this.contactData.message;
+    if (messageFieldValue && messageFieldValue.trim().length >= 1) {
+      this.isMessageValid = true;
+    } else {
+      this.isMessageValid = false;
+    }
+
+
+}
+
+onMessageInput(event: any): void {
+  this.messageChecked = false;
+  if (event.target.value) {
+    this.isMessageLabelVisible = true;
+  } else {
+    this.isMessageLabelVisible = false;
+  }
+  this.checkMessageValidation();
+}
+
+
+
+
+checkPolicyValidation(){
+  
+  this.policyChecked = true;
+}
+
+onPolicyChange(event: Event): void {
+  this.policyChecked = false;
+}
+
+
+
+checkAllValidation(){
+this.checkPolicyValidation();
+this.checkNameValidation();
+this.nameChecked = true;
+this.checkEmailValidation();
+this.emailChecked = true;
+this.checkMessageValidation();
+this.messageChecked=true;
+}
+
+
+
 isFormValid(contactForm: any): boolean {
-  return contactForm.valid && this.policyAccepted;
+  return contactForm.valid && this.policyAccepted && this.isNameValid && this.isEmailValid && this.isMessageValid;
 }
 
 onSubmit(ngForm: NgForm) {
   if(this.isFormValid(ngForm)){
-  if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
+  if (ngForm.submitted && ngForm.form.valid && !this.mailTest ) {
     this.http.post(this.post.endPoint, this.post.body(this.contactData))
       .subscribe({
         next: (response) => {
@@ -117,6 +270,8 @@ onSubmit(ngForm: NgForm) {
 }
 
 
+
+
 private updateTexts(): void {
   if (this.currentLanguage === 'de') {
     this.header = 'Kontakt';
@@ -132,7 +287,16 @@ private updateTexts(): void {
     this.privacyLinkText = 'Datenschutzerklärung';
     this.privacyLabel2 = 'gelesen und stimme der Verarbeitung meiner Daten gemäß dieser zu.';
     this.buttonText = 'Hallo sagen ;)';
-    this.policyLink ='datenschutz';
+    this.policyLink ='Datenschutz';
+
+    
+    this.inputNameLabel = 'Ihr Name';
+  this.inputEmailLabel = 'Ihre E-Mail';
+  this.inputMessageLabel = 'Ihre Nachricht';
+  this.requiredTextName = 'Ihr Name ist erforderlich';
+  this.requiredTextEmail ='Ihre E-Mail ist erforderlich';
+  this.requiredTextMessage='Ihre Nachricht ist leer';
+  this.requiredTextPrivacy='Bitte stimmen Sie der Datenschutzerklärung zu'
   } else if (this.currentLanguage === 'en') {
     this.header = 'Contact';
     this.text = 'Contact me through this form. I am excited to hear from you, learn about your ideas, and contribute to your projects with my skills and dedication.';
@@ -148,6 +312,15 @@ private updateTexts(): void {
     this.privacyLabel2 = 'and agree to the processing of my data as outlined.';
     this.buttonText = 'Say hello ;)';
     this.policyLink = 'privacy';
+
+
+    this.inputNameLabel = 'Your name';
+  this.inputEmailLabel = 'Your email';
+  this.inputMessageLabel = 'Your message';
+  this.requiredTextName = 'Your name is required';
+  this.requiredTextEmail ='Your email is required';
+  this.requiredTextMessage='Your message is empty';
+  this.requiredTextPrivacy='Please accept the privacy policy'
   } else {
     // Fallback-Sprache (optional, Englisch als Standard)
     this.header = 'Contact';
@@ -164,6 +337,15 @@ private updateTexts(): void {
     this.privacyLabel2 = 'and agree to the processing of my data as outlined.';
     this.buttonText = 'Say hello ;)';
     this.policyLink = 'privacy';
+
+    
+    this.inputNameLabel = 'Your name';
+  this.inputEmailLabel = 'Your email';
+  this.inputMessageLabel = 'Your message';
+  this.requiredTextName = 'Your name is required';
+  this.requiredTextEmail ='Your email is required';
+  this.requiredTextMessage='Your message is empty';
+  this.requiredTextPrivacy='Please accept the privacy policy'
   }
 }
 

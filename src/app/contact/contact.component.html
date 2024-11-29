@@ -13,25 +13,54 @@
                 </p>
             </div>
             <div id="contactFormContainer">
-                <form id="contactForm" #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
-                    
-                    <input [(ngModel)]="contactData.name" class="input" name="name" type="text" id="name" [placeholder]="inputNamePlaceholder" autocomplete="off" required>
+                <div id="contactFormContainer">
 
-                    
-                    <input [(ngModel)]="contactData.email" class="input" type="email" id="email" name="email" [placeholder]="inputEmailPlaceholder" autocomplete="off" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
-
-                    
-                    <textarea [(ngModel)]="contactData.message"  class="input" id="message" name="message" [placeholder]="inputMessagePlaceholder" autocomplete="off" required>
-                    </textarea>
-                    <div id="checkBoxRow">
-                        <input type="checkbox" name="privacyCheckbox" id="privacyCheckbox" [(ngModel)]="policyAccepted" required>
-                        <label id="checkboxLabel" for="privacyCheckbox">{{privaceLabel1}} <a [routerLink]="policyLink" >{{privacyLinkText}}</a> {{privacyLabel2}}</label>
-
-                    </div>
-
-                    <button class="mainButton" type="submit" [disabled]="!contactForm.valid" ><span>{{buttonText}}</span></button>
-                </form>
+                    <form id="contactForm" #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+    
+                        <div id="inputNameWrapper" class="inputWrapper">
+                            <img src="assets/icons/validIcon.svg" alt="Icon 1" class="input-icon" [class.visible]="isNameValid && nameChecked" id="nameValidIcon">
+                            <img src="assets/icons/invalidIcon.svg" alt="Icon 2" class="input-icon" [class.visible]="!isNameValid && nameChecked" id="nameInvalidIcon">
+                            <label class="inputLabel" [class.visible]="isNameLabelVisible" id="inputLabelName"for="name">{{inputNameLabel}}</label>
+                            <input [(ngModel)]="contactData.name" class="input" name="name" type="text" id="name" (focus)="onNameFocus()" (blur)="onNameBlur()" (input)="onNameInput($event)" [placeholder]="inputNamePlaceholder" autocomplete="off" required>
+                            <div class="isRequiredText" [class.visible]="!isNameValid && nameChecked">{{requiredTextName}}</div>
+                            
+                        </div>
+    
+                        <div id="inputEmailWrapper" class="inputWrapper">
+                            <img src="assets/icons/validIcon.svg" alt="Icon 1" class="input-icon" [class.visible]="isEmailValid && emailChecked" id="emailValidIcon">
+                            <img src="assets/icons/invalidIcon.svg" alt="Icon 2" class="input-icon" [class.visible]="!isEmailValid && emailChecked" id="emailInvalidIcon">
+                            <label class="inputLabel" [class.visible]="isEmailLabelVisible" id="inputLabelEmail" for="email">{{inputEmailLabel}}</label>
+                            <input [(ngModel)]="contactData.email" class="input" type="email" id="email" name="email" 
+                                   (focus)="onEmailFocus()" (blur)="onEmailBlur()" (input)="onEmailInput($event)" 
+                                   [placeholder]="inputEmailPlaceholder" autocomplete="off" required 
+                                   pattern="[a-zA-Z0-9.\_%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
+                            <div class="isRequiredText" [class.visible]="!isEmailValid && emailChecked" >{{requiredTextEmail}}</div>
+                        </div>
+                        
+                        <div id="inputMessageWrapper" class="inputWrapper">
+                            <img src="assets/icons/validIcon.svg" alt="Icon 1" class="input-icon inputMessageIcon" [class.visible]="isMessageValid && messageChecked" id="messageValidIcon">
+                            <img src="assets/icons/invalidIcon.svg" alt="Icon 2" class="input-icon inputMessageIcon" [class.visible]="!isMessageValid && messageChecked" id="messageInvalidIcon">
+                            <label class="inputLabel" [class.visible]="isMessageLabelVisible" id="inputLabelMessage" for="message">{{inputMessageLabel}}</label>
+                            <textarea [(ngModel)]="contactData.message" class="input" id="message" name="message" 
+                                      (focus)="onMessageFocus()" (blur)="onMessageBlur()" (input)="onMessageInput($event)" 
+                                      [placeholder]="inputMessagePlaceholder" autocomplete="off" required></textarea>
+                            <div class="isRequiredText" [class.visible]="!isMessageValid && messageChecked">{{requiredTextMessage}}</div>
+                        </div>
+    
+                        <div id="checkBoxRow">
+                            <div id="checkBoxWrapper">
+                            <input type="checkbox" name="privacyCheckbox" id="privacyCheckbox" class="hiddenCheckbox" [(ngModel)]="policyAccepted" (change)="onPolicyChange($event)" required>
+                            <label for="privacyCheckbox" class="customCheckbox"></label>
+                            </div>
+                            <label id="checkboxLabel" for="privacyCheckbox">{{privaceLabel1}} <a [routerLink]="policyLink" >{{privacyLinkText}}</a> {{privacyLabel2}}</label>
+                            <div class="isRequiredText" [class.visible]="!policyAccepted && policyChecked">{{requiredTextPrivacy}}</div>
+                        </div>
+    
+                        <button class="mainButton" type="submit" [disabled]="!isFormValid(contactForm)" (mouseenter)="checkAllValidation()"><span>{{buttonText}}</span></button>
+                    </form>
+                </div>
             </div>
+    
             
     </div>
     <div id="buttonUpContainer">
