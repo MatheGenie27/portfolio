@@ -311,6 +311,11 @@ resetCustomLabels(){
   this.messageChecked = false;
 }
 
+buttonDeFocus(){
+  setTimeout( () => {
+    this.hideSubmitFeedback();
+  }, 2000)
+}
 
 private updateTexts(): void {
   if (this.currentLanguage === 'de') {
