@@ -68,9 +68,15 @@ export class ContactComponent implements OnInit, OnDestroy {
   requiredTextMessage='Your message is empty';
   requiredTextPrivacy='Please accept the privacy policy'
 
+  feedbackText = 'Message sent'
+  feedbackSuccess = 'Message sent';
+  feedbackFail = 'Something went wrong';
+  isFeedbackSuccess: boolean = false;
+
   isNameLabelVisible: boolean = false;
   isEmailLabelVisible: boolean = false;
   isMessageLabelVisible: boolean = false;
+  isSubmitFeedbackVisible: boolean = false;
 
   isNameValid: boolean = false;
   isEmailValid: boolean = false;
@@ -115,6 +121,7 @@ changeLanguage(newLanguage: string){
 
 onNameFocus(): void{
   this.isNameLabelVisible = true;
+  this.hideSubmitFeedback();
 }
 
 onNameBlur(): void {
@@ -150,6 +157,7 @@ onNameInput(event: any):void{
 
 onEmailFocus(): void {
   this.isEmailLabelVisible = true;
+  this.hideSubmitFeedback();
 }
 
 onEmailBlur(): void {
@@ -186,6 +194,7 @@ onEmailInput(event: any): void {
 
 onMessageFocus(): void {
   this.isMessageLabelVisible = true;
+  this.hideSubmitFeedback();
 }
 
 onMessageBlur(): void {
@@ -256,11 +265,16 @@ onSubmit(ngForm: NgForm) {
         next: (response) => {
 
           ngForm.resetForm();
+          this.resetCustomLabels();
         },
         error: (error) => {
           console.error(error);
+          this.negativeFeedback();
         },
-        complete: () => console.info('send post complete'),
+        complete: () => { 
+          console.info('send post complete')
+          this.positiveFeedback();
+        },
       });
   } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
 
@@ -269,7 +283,33 @@ onSubmit(ngForm: NgForm) {
 }
 }
 
+positiveFeedback(){
+  this.feedbackText = this.feedbackSuccess;
+  this.isFeedbackSuccess = true;
+  this.showSubmitFeedback();
+}
 
+negativeFeedback(){
+  this.feedbackText = this.feedbackFail;
+  this.isFeedbackSuccess = false;
+  this.showSubmitFeedback();
+}
+
+showSubmitFeedback(){
+  this.isSubmitFeedbackVisible = true;
+}
+
+hideSubmitFeedback(){
+  this.isSubmitFeedbackVisible = false;
+  this.isFeedbackSuccess = false;
+}
+
+resetCustomLabels(){
+  this.policyChecked = false;
+  this.nameChecked = false;
+  this.emailChecked = false;
+  this.messageChecked = false;
+}
 
 
 private updateTexts(): void {
@@ -296,7 +336,10 @@ private updateTexts(): void {
   this.requiredTextName = 'Ihr Name ist erforderlich';
   this.requiredTextEmail ='Ihre E-Mail ist erforderlich';
   this.requiredTextMessage='Ihre Nachricht ist leer';
-  this.requiredTextPrivacy='Bitte stimmen Sie der Datenschutzerklärung zu'
+  this.requiredTextPrivacy='Bitte stimmen Sie der Datenschutzerklärung zu';
+
+  this.feedbackSuccess = 'Nachricht wurde gesendet';
+  this.feedbackFail = 'Das hat nicht funktioniert';
   } else if (this.currentLanguage === 'en') {
     this.header = 'Contact';
     this.text = 'Contact me through this form. I am excited to hear from you, learn about your ideas, and contribute to your projects with my skills and dedication.';
@@ -321,6 +364,8 @@ private updateTexts(): void {
   this.requiredTextEmail ='Your email is required';
   this.requiredTextMessage='Your message is empty';
   this.requiredTextPrivacy='Please accept the privacy policy'
+  this.feedbackSuccess = 'Message sent';
+  this.feedbackFail = 'Something went wrong';
   } else {
     // Fallback-Sprache (optional, Englisch als Standard)
     this.header = 'Contact';
@@ -345,7 +390,9 @@ private updateTexts(): void {
   this.requiredTextName = 'Your name is required';
   this.requiredTextEmail ='Your email is required';
   this.requiredTextMessage='Your message is empty';
-  this.requiredTextPrivacy='Please accept the privacy policy'
+  this.requiredTextPrivacy='Please accept the privacy policy';
+  this.feedbackSuccess = 'Message sent';
+  this.feedbackFail = 'Something went wrong';
   }
 }
 

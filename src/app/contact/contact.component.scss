@@ -338,8 +338,30 @@
 
 
 
+#submitButtonWrapper{
+  position: relative;
+}
+
+#feedbackOnSubmitLabel{
+  position: absolute;
+  left: 2.5rem;
+  top: 58px;
+  opacity: 0;
 
 
+  &.visible{
+    opacity: 1;
+    transition: opacity ease-in-out 125ms;
+  }
+
+  &.positive{
+    color: green;
+  }
+
+  &.negative{
+    color: red;
+  }
+}
 
 
 

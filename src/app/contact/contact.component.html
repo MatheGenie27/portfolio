@@ -55,8 +55,11 @@
                             <label id="checkboxLabel" for="privacyCheckbox">{{privaceLabel1}} <a [routerLink]="policyLink" >{{privacyLinkText}}</a> {{privacyLabel2}}</label>
                             <div class="isRequiredText" [class.visible]="!policyAccepted && policyChecked">{{requiredTextPrivacy}}</div>
                         </div>
-    
-                        <button class="mainButton" type="submit" [disabled]="!isFormValid(contactForm)" (mouseenter)="checkAllValidation()"><span>{{buttonText}}</span></button>
+                        
+                        <div id="submitButtonWrapper">
+                           <button class="mainButton" type="submit" [disabled]="!isFormValid(contactForm)" (mouseenter)="checkAllValidation()"><span>{{buttonText}}</span></button>
+                           <label [class.visible]="isSubmitFeedbackVisible" [style.color]="isFeedbackSuccess ? 'green' : 'red' " id="feedbackOnSubmitLabel">{{feedbackText}}</label>
+                        </div>
                     </form>
                 </div>
             </div>
