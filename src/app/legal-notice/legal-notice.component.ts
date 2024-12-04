@@ -23,16 +23,18 @@ export class LegalNoticeComponent {
   ngOnInit(): void {
     this.languageService.language$.subscribe((language) => {
       this.currentLanguage = language;
-      
-      // Überprüfen, ob die Sprache auf "de" gewechselt wird, und zu "legalNotice" navigieren
-      if (language === 'de') {
-       
+
+      // Überprüfen, ob die Sprache auf "de" gewechselt wird und wir uns auf der legalNotice Seite befinden
+      if (language === 'de' && this.router.url.includes('legalNotice')) {
+        // Navigiere zu Impressum
         this.router.navigate(['/impressum']);
+      } else if (language === 'en' && this.router.url.includes('impressum')) {
+        // Wenn die Sprache wieder auf Englisch gesetzt wird, navigiere zu Legal Notice
+        this.router.navigate(['/legalNotice']);
       }
-
-
     });
   }
+
 
 
 

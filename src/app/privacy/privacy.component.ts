@@ -20,18 +20,18 @@ export class PrivacyComponent {
   
   constructor ( private languageService: LanguageService, private router: Router){} 
   
-  
   ngOnInit(): void {
     this.languageService.language$.subscribe((language) => {
       this.currentLanguage = language;
-      
-      // Überprüfen, ob die Sprache auf "de" gewechselt wird, und zu "legalNotice" navigieren
-      if (language === 'de') {
-       
+
+      // Überprüfen, ob die Sprache auf "de" gewechselt wird und wir uns auf der Privacy-Seite befinden
+      if (language === 'de' && this.router.url.includes('privacy')) {
+        // Navigiere zur Seite "datenschutz"
         this.router.navigate(['/datenschutz']);
+      } else if (language === 'en' && this.router.url.includes('datenschutz')) {
+        // Wenn die Sprache auf Englisch gesetzt wird und wir auf der Datenschutz-Seite sind, navigiere zurück zu Privacy
+        this.router.navigate(['/privacy']);
       }
-
-
     });
   }
 
