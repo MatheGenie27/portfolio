@@ -18,6 +18,7 @@ body {
     width: 100%;
     display: flex;
     justify-content: center;
+    background: linear-gradient(179.99deg, #FFFFFF 12.89%, #EAF0FF 91.39%);
   }
   
     
@@ -38,6 +39,7 @@ body {
         padding-right: 1.5rem;
         padding-top: 7.3125rem;
         padding-bottom: 10vh;
+        position: relative;
     }
     
     body{
@@ -172,3 +174,25 @@ body {
           }
         }
       }
+
+      .circle-background {
+        width: 200px; /* Breite des Kreises */
+        height: 200px; /* Höhe des Kreises */
+        top: -75px; /* Positioniert den Kreis 71px oberhalb des Containers */
+        left: 50px; /* Positioniert den Kreis 199px links vom Container */
+        gap: 0px; /* Kein Abstand zwischen Elementen, falls flex oder grid genutzt wird */
+        background: radial-gradient(74.22% 74.22% at 19.79% 22.42%, #5988FF 6.25%, #5988FF 51.56%, #0043F0 100%);
+        position: absolute; /* Ermöglicht die freie Platzierung */
+        z-index: 1; /* Positioniert den Kreis hinter anderen Elementen */
+        border-radius: 50%; /* Formt das Element zu einem perfekten Kreis */
+    }
+
+      
+    @media (max-width: 768px){
+
+      .circle-background {
+        left: -20px;
+        
+      }
+      
+    }
