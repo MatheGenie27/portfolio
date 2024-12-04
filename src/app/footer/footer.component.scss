@@ -77,17 +77,23 @@
     padding-left:1rem;
     padding-right: 1rem;
     gap:2rem;
-    font-weight: 400;
+    
     
     
   }
 
-  .footerLink{
+  .footerLinkWrap{
+    width: 100px;
+    transition: all linear 0.125s;
     &:hover{
-      transition: all ease-in-out 125ms;
-      scale:1.1;
-      font-weight: 450;
+      font-weight: 700;
+      
     }
+  }
+
+  .footerLink{
+    
+   
   }
 
   #footerCopyright{

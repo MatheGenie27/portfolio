@@ -1,14 +1,12 @@
 <div class="component-container">
-
-    <div id="skillsetContainer">
-        <div id="skillsetHeader">
-            <h2>{{title}}</h2>
-        </div>
-        <div id="technologyContainer">
-            <ng-container *ngFor="let skill of skills">
-              <app-skill [skill]="skill"></app-skill>
-            </ng-container>
-          </div>
+  <div id="skillsetContainer">
+    <div id="skillsetHeader">
+      <h2>{{ title }}</h2>
     </div>
-
+    <div id="technologyContainer">
+      <ng-container *ngFor="let skill of skills">
+        <app-skill [skill]="skill"></app-skill>
+      </ng-container>
+    </div>
+  </div>
 </div>

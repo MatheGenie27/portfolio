@@ -1,12 +1,12 @@
-<div id="aboutMe"class="component-container">
+<div id="aboutMe" class="component-container">
   <div class="circle-background-big"></div>
   <div class="circle-background-small"></div>
   <div id="aboutMeContainer">
     <div id="letsWorkContainer">
-      <h2>{{headertitle}}</h2>
+      <h2>{{ headertitle }}</h2>
 
       <div id="availabilityContainer">
-        <div id="iAm">{{headertext}}</div>
+        <div id="iAm">{{ headertext }}</div>
 
         <div id="availabilityIconRow">
           <div
@@ -20,7 +20,7 @@
               class="availabilityIconsImgs"
               [src]="locationIconPath"
             />
-            <div class="availybilityTexts">{{locationText}}</div>
+            <div class="availybilityTexts">{{ locationText }}</div>
           </div>
           <div
             id="remote"
@@ -35,7 +35,7 @@
                 [src]="remoteIconPath"
               />
             </div>
-            <div id="remoteTxt" class="availybilityTexts">{{remoteText}}</div>
+            <div id="remoteTxt" class="availybilityTexts">{{ remoteText }}</div>
           </div>
           <div
             id="relocate"
@@ -43,10 +43,10 @@
             (mouseenter)="relocateOnHover(true)"
             (mouseleave)="relocateOnHover(false)"
           >
-          <div id="relocateImgContainer">
-            <img class="availabilityIconsImgs" [src]="relocateIconPath" />
+            <div id="relocateImgContainer">
+              <img class="availabilityIconsImgs" [src]="relocateIconPath" />
             </div>
-            <div class="availybilityTexts">{{relocateText}}</div>
+            <div class="availybilityTexts">{{ relocateText }}</div>
           </div>
         </div>
       </div>
@@ -54,16 +54,16 @@
     <div id="aboutMeTextandButton">
       <div id="aboutMeText">
         <p>
-          {{aboutText}}
+          {{ aboutText }}
         </p>
-        <p>{{aboutText2}}</p>
+        <p>{{ aboutText2 }}</p>
       </div>
       <div
         (click)="onScrollToContact()"
         id="contactRefButton"
         class="mainButton"
       >
-        <span>{{messageButton}}</span>
+        <span>{{ messageButton }}</span>
       </div>
     </div>
   </div>

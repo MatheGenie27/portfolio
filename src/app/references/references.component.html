@@ -1,49 +1,30 @@
 <div class="component-container">
-
-    <div id="referencesContainer">
-
-        <div id="refHeaderContainer">
-            <div id="refMainHeader"><h2>{{header}}</h2></div>
-            <div id="refSubHeader"><p>{{subheader}}</p></div>
-        </div>
-
-       <!-- <div id="testimonialContainer">
-            <ng-container *ngFor="let reference of references">
-                <app-testimonial [testimonial]="reference" ></app-testimonial>
-            </ng-container>
-        </div>
-    -->
-
-
-
-    <ngb-carousel 
-  *ngIf="references && references.length > 0"
-  [interval]="5000" 
-  [pauseOnHover]="true" 
-  [wrap]="true"
-  [keyboard]="true"
-  [showNavigationArrows]="true"
-  [showNavigationIndicators]="true">
-  <ng-template ngbSlide *ngFor="let group of references">
-    <div id="testimonialContainer" class="">
-      <div *ngFor="let reference of group">
-        <app-testimonial [testimonial]="reference"></app-testimonial>
+  <div id="referencesContainer">
+    <div id="refHeaderContainer">
+      <div id="refMainHeader">
+        <h2>{{ header }}</h2>
+      </div>
+      <div id="refSubHeader">
+        <p>{{ subheader }}</p>
       </div>
     </div>
-  </ng-template>
-</ngb-carousel>
 
-
-        
-    
-
-
-        
-
-
-    </div>
-
-
-
-
+    <ngb-carousel
+      *ngIf="references && references.length > 0"
+      [interval]="5000"
+      [pauseOnHover]="true"
+      [wrap]="true"
+      [keyboard]="true"
+      [showNavigationArrows]="true"
+      [showNavigationIndicators]="true"
+    >
+      <ng-template ngbSlide *ngFor="let group of references">
+        <div id="testimonialContainer" class="">
+          <div *ngFor="let reference of group">
+            <app-testimonial [testimonial]="reference"></app-testimonial>
+          </div>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+  </div>
 </div>

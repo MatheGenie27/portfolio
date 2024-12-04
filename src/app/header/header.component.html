@@ -1,56 +1,56 @@
 <div class="component-container">
-    <div id="headerContainer">
-        <a routerLink=" " class="headerLogo">
-            <img id="headerLogo" src="/assets/logo/Logo_BB-Kompakt_weiß.svg">
-        </a>
-        <div id="burgerMenuIcon" (click)="toggleNavModal()">
-            <img [src]="currentIcon" alt="Burgermenu Icon">
-        </div>
-        <div id="navBar">
-            <div id="languageButton" (click)="toggleLanguage()">
-                <img id="bubbleImage" src="assets/img/speech-bubble.png">
-                <img id="languageLogo" [src]="languageIconPath">
-            </div>
-            <div id="navAbout" class="navElement">
-                <a href="#aboutMe">{{aboutMe}}</a>
-            </div>
-            <div id="navSkill" class="navElement">
-                <a href="#skillsetContainer">{{skills}}</a>
-            </div>
-            <div id="navMyWork" class="navElement">
-                <a href="#projectsContainer">{{work}}</a>
-            </div>
-        </div>
-
+  <div id="headerContainer">
+    <a routerLink=" " class="headerLogo">
+      <img id="headerLogo" src="/assets/logo/Logo_BB-Kompakt_weiß.svg" />
+    </a>
+    <div id="burgerMenuIcon" (click)="toggleNavModal()">
+      <img [src]="currentIcon" alt="Burgermenu Icon" />
     </div>
-    <div id="navModal" [class.active]="isNavModalOpen">
-        <div id="logoRow">
-            <a href="#headerContainer" class="headerLogo">
-                <img id="headerLogo2" >
-            </a>
-            <div class="closeButton" id="modalCloseButton" *ngIf="showCloseButtonInModal" (click)="closeNavModal()">
-                <img id="closeIcon" src="assets/icons/icon3.png">
-            </div>
-        </div>
-        
-        <div id="navBar2">
-            <div id="languageButton2" (click)="toggleLanguage()">
-                <img id="bubbleImage2" src="assets/img/speech-bubble.png">
-                <img id="languageLogo2" [src]="languageIconPath">
-            </div>
-            <div id="navAbout2" class="navElement2" (click)="closeNavModal()">
-                <a href="#aboutMe">{{aboutMe}}</a>
-            </div>
-            <div id="navSkill2" class="navElement2" (click)="closeNavModal()">
-                <a href="#skillsetContainer">{{skills}}</a>
-            </div>
-            <div id="navMyWork2" class="navElement2" (click)="closeNavModal()">
-                <a href="#projectsContainer">{{work}}</a>
-            </div>
-        </div>
-        
-        
-
+    <div id="navBar">
+      <div id="languageButton" (click)="toggleLanguage()">
+        <img id="bubbleImage" src="assets/img/speech-bubble.png" />
+        <img id="languageLogo" [src]="languageIconPath" />
+      </div>
+      <div id="navAbout" class="navElement">
+        <a href="#aboutMe">{{ aboutMe }}</a>
+      </div>
+      <div id="navSkill" class="navElement">
+        <a href="#skillsetContainer">{{ skills }}</a>
+      </div>
+      <div id="navMyWork" class="navElement">
+        <a href="#projectsContainer">{{ work }}</a>
+      </div>
+    </div>
+  </div>
+  <div id="navModal" [class.active]="isNavModalOpen">
+    <div id="logoRow">
+      <a href="#headerContainer" class="headerLogo">
+        <img id="headerLogo2" />
+      </a>
+      <div
+        class="closeButton"
+        id="modalCloseButton"
+        *ngIf="showCloseButtonInModal"
+        (click)="closeNavModal()"
+      >
+        <img id="closeIcon" src="assets/icons/icon3.png" />
+      </div>
     </div>
 
+    <div id="navBar2">
+      <div id="languageButton2" (click)="toggleLanguage()">
+        <img id="bubbleImage2" src="assets/img/speech-bubble.png" />
+        <img id="languageLogo2" [src]="languageIconPath" />
+      </div>
+      <div id="navAbout2" class="navElement2" (click)="closeNavModal()">
+        <a href="#aboutMe">{{ aboutMe }}</a>
+      </div>
+      <div id="navSkill2" class="navElement2" (click)="closeNavModal()">
+        <a href="#skillsetContainer">{{ skills }}</a>
+      </div>
+      <div id="navMyWork2" class="navElement2" (click)="closeNavModal()">
+        <a href="#projectsContainer">{{ work }}</a>
+      </div>
+    </div>
+  </div>
 </div>

@@ -1,27 +1,53 @@
 <div class="component-container">
-    <div id="footerContainer">
-        <div id="footerUpperRow">
-            <a id="footerLogo" routerLink=" ">
-                <img src="assets/logo/Logo_BB-Favicon_weiß.svg">
-            </a>
-            <div id="footerCopyright">
-                &#64; Björn Breßler 2025
-            </div>
-            <div id="footerSocMediaContainer">
-                <a href="https://github.com/MatheGenie27" id="footerGithubLogo" class="socialMediaBox">
-                    <img class="socialMediaImage" id="footerGithubLogoIcon" src="assets/icons/githubIcon.svg">
-                </a>
-                <a href="mailto:info@bjoern-bressler.de" id="footerMailLogo" class="socialMediaBox">
-                    <img class="socialMediaImage" id="footerMailLogoIcon" src="assets/icons/mailIcon.svg">
-                </a>
-                <a href="" id="footerLILogo" class="socialMediaBox">
-                    <img class="socialMediaImage" id="footerLnLogoIcon" src="assets/icons/lnIcon.svg">
-                </a>
-            </div>
-        </div>
-        <div id="legalNoticeRow">
-            <a class="footerLink" [routerLink]="legalLinkHref">{{legalLinkText}}</a>
-            <a class="footerLink" [routerLink]="policyLink">{{privacyLinkText}}</a>
-        </div>
+  <div id="footerContainer">
+    <div id="footerUpperRow">
+      <a id="footerLogo" routerLink=" ">
+        <img src="assets/logo/Logo_BB-Favicon_weiß.svg" />
+      </a>
+      <div id="footerCopyright">&#64; Björn Breßler 2025</div>
+      <div id="footerSocMediaContainer">
+        <a
+          href="https://github.com/MatheGenie27"
+          id="footerGithubLogo"
+          class="socialMediaBox"
+        >
+          <img
+            class="socialMediaImage"
+            id="footerGithubLogoIcon"
+            src="assets/icons/githubIcon.svg"
+          />
+        </a>
+        <a
+          href="mailto:info@bjoern-bressler.de"
+          id="footerMailLogo"
+          class="socialMediaBox"
+        >
+          <img
+            class="socialMediaImage"
+            id="footerMailLogoIcon"
+            src="assets/icons/mailIcon.svg"
+          />
+        </a>
+        <a href="" id="footerLILogo" class="socialMediaBox">
+          <img
+            class="socialMediaImage"
+            id="footerLnLogoIcon"
+            src="assets/icons/lnIcon.svg"
+          />
+        </a>
+      </div>
     </div>
+    <div id="legalNoticeRow">
+      <div class="footerLinkWrap">
+        <a class="footerLink" [routerLink]="legalLinkHref">{{
+          legalLinkText
+        }}</a>
+      </div>
+      <div class="footerLinkWrap">
+        <a class="footerLink" [routerLink]="policyLink">{{
+          privacyLinkText
+        }}</a>
+      </div>
+    </div>
+  </div>
 </div>

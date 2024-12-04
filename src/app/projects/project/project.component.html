@@ -1,29 +1,35 @@
-
-
 <div class="project" [ngClass]="className">
-    <div class="imageContainer">
-        <img class="image" [src]="project.imagePath"   (click)="!isMobileOrTablet() && openLiveLink(project.liveLink)">
+  <div class="imageContainer">
+    <img
+      class="image"
+      [src]="project.imagePath"
+      (click)="!isMobileOrTablet() && openLiveLink(project.liveLink)"
+    />
+  </div>
+  <div class="projectText">
+    <div class="projectTitle">
+      {{ project.title }}
     </div>
-    <div class="projectText">
-        <div class="projectTitle">
-            {{project.title}}
-        </div>
-        <div class="projectTechnologies">
-            {{ project.technologies.join(' | ') }}
-        </div>
-        <div class="projectDescription">
-            {{project.description}}
-        </div>
-        <div class="buttonRow">
-            <div class="projectGit mainButton" (click)="openGithubLink(project.gitHubLink)">
-                <span>Github</span>
-            </div>
-            
-
-            <div  class="projectLive secButton" (click)="openLiveLink(project.liveLink)">
-                <span>Live test</span>
-            </div>
-        </div>
+    <div class="projectTechnologies">
+      {{ project.technologies.join(" | ") }}
     </div>
+    <div class="projectDescription">
+      {{ project.description }}
+    </div>
+    <div class="buttonRow">
+      <div
+        class="projectGit mainButton"
+        (click)="openGithubLink(project.gitHubLink)"
+      >
+        <span>Github</span>
+      </div>
 
+      <div
+        class="projectLive secButton"
+        (click)="openLiveLink(project.liveLink)"
+      >
+        <span>Live test</span>
+      </div>
+    </div>
+  </div>
 </div>
