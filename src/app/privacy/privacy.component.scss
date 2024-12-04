@@ -4,6 +4,8 @@
 
 :host{
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 body {
@@ -83,6 +85,33 @@ body {
         text-decoration: none;
         color: black;
     }
+
+
+    .logoBackRow{
+      margin-bottom: 3rem;
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      width: 100%;
+      gap: 2rem;
+    }
+
+    .backHomeLogo{
+      width: 150px;
+      height: 150px;
+      &:hover{
+        
+      }
+
+    }
+
+    .backHomeText{
+      &:hover{
+        scale: 1.2;
+        transition: all ease-in-out 125ms;
+      }
+    }
+
     
     #name{
         font-size: larger;

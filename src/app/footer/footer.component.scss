@@ -77,7 +77,17 @@
     padding-left:1rem;
     padding-right: 1rem;
     gap:2rem;
+    font-weight: 400;
     
+    
+  }
+
+  .footerLink{
+    &:hover{
+      transition: all ease-in-out 125ms;
+      scale:1.1;
+      font-weight: 450;
+    }
   }
 
   #footerCopyright{
@@ -85,10 +95,9 @@
   }
 
   #footerLogo{
-    width:69px;
-    height: 69px;
-    background-color: white;
-    color: #0043F0;
+    width:100px;
+    height: 100px;
+    
   }
 
   /* Für Handys und Tablets im Portrait- und Landscape-Modus */

@@ -61,9 +61,9 @@
   }
 
   .headerLogo{
-    width:68px;
-    height:68px;
-    background-color: white;
+    width:117px;
+    height:117px;
+    
   }
 
   #headerLogo:hover{
@@ -192,6 +192,11 @@
       padding-right: 1rem;
       justify-content: space-between;
       align-items: center;
+    }
+
+    .headerLogo{
+      width: 100px;
+      height: 100px;
     }
 
     #navBar{

@@ -2,10 +2,10 @@
     <div id="footerContainer">
         <div id="footerUpperRow">
             <a id="footerLogo" routerLink=" ">
-                Logo
+                <img src="assets/logo/Logo_BB-Favicon_weiß.svg">
             </a>
             <div id="footerCopyright">
-                &#64; Björn Breßler 2024
+                &#64; Björn Breßler 2025
             </div>
             <div id="footerSocMediaContainer">
                 <a href="https://github.com/MatheGenie27" id="footerGithubLogo" class="socialMediaBox">
@@ -20,8 +20,8 @@
             </div>
         </div>
         <div id="legalNoticeRow">
-            <a [routerLink]="legalLinkHref">{{legalLinkText}}</a>
-            <a [routerLink]="policyLink">{{privacyLinkText}}</a>
+            <a class="footerLink" [routerLink]="legalLinkHref">{{legalLinkText}}</a>
+            <a class="footerLink" [routerLink]="policyLink">{{privacyLinkText}}</a>
         </div>
     </div>
 </div>
