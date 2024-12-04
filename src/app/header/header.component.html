@@ -1,7 +1,7 @@
 <div class="component-container">
   <div id="headerContainer">
     <a routerLink=" " class="headerLogo">
-      <img id="headerLogo" src="assets/logo/Logo_BB-Kompakt_weiss.svg" />
+      <img id="headerLogo" src="assets/logo/Logo_BB-Kompakt_weiß_semibold.svg" />
     </a>
     <div id="burgerMenuIcon" (click)="toggleNavModal()">
       <img [src]="currentIcon" alt="Burgermenu Icon" />
@@ -25,15 +25,19 @@
   <div id="navModal" [class.active]="isNavModalOpen">
     <div id="logoRow">
       <a href="#headerContainer" class="headerLogo">
-        <img id="headerLogo2" />
+        <img id="headerLogo2" 
+        *ngIf="showCloseButtonInModal"
+        src="assets/logo/Logo_BB-Kompakt_schwarz.svg"
+        />
       </a>
       <div
         class="closeButton"
         id="modalCloseButton"
-        *ngIf="showCloseButtonInModal"
+        
         (click)="closeNavModal()"
       >
-        <img id="closeIcon" src="assets/icons/icon3.png" />
+        <img id="closeIcon" src="assets/icons/icon3.png"
+        *ngIf="showCloseButtonInModal"/>
       </div>
     </div>
 

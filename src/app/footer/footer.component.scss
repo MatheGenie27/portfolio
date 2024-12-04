@@ -3,7 +3,7 @@
 :host {
     display: flex;
     width: 100%; /* Setzt die Komponente auf volle Breite */
-    max-width: 1440px; /* Optional: Maximale Breite festlegen */
+    justify-content: center;
     margin: 0 auto; /* Zentriert die Komponente innerhalb des übergeordneten Containers */
     background: radial-gradient(71.18% 335.57% at 28.82% -124.4%, #5988FF 6.25%, #5988FF 51.56%, #0043F0 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
     color: white;
@@ -17,6 +17,7 @@
 
   #footerContainer{
     width: 100%;
+    max-width: 1440px;
     display: flex;
     flex-direction: column;
     align-items: center;

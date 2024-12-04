@@ -3,13 +3,14 @@
 :host {
     display: flex;
     width: 100%; /* Setzt die Komponente auf volle Breite */
-    max-width: 1440px; /* Optional: Maximale Breite festlegen */
+     /* Optional: Maximale Breite festlegen */
     margin: 0 auto; /* Zentriert die Komponente innerhalb des übergeordneten Containers */
     height: 100vh;
     background: linear-gradient(179.99deg, #FFFFFF 12.89%, #EAF0FF 91.39%);
-    overflow:hidden;
+    
     z-index:2;
     position: relative;
+    justify-content: center;
     
     
 
@@ -29,12 +30,14 @@
 
 #atfContainer{
     width: 100%;
+    max-width: 1440px;
     display: flex;
     height: 100vh;
     align-items: center;
     justify-content: center;
     padding-left: 1rem;
     padding-right: 1rem;
+    position: relative;
 }
 
 

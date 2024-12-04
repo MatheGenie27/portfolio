@@ -261,7 +261,6 @@ export class ContactComponent implements OnInit, OnDestroy {
               this.utility.negativeFeedback();
             },
             complete: () => {
-              console.info('send post complete');
               this.utility.positiveFeedback();
             },
           });

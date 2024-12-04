@@ -14,7 +14,7 @@ export class Utility {
   positiveFeedback() {
     this.context.feedbackText = this.context.feedbackSuccess;
     this.context.isFeedbackSuccess = true;
-    this.context.showSubmitFeedback();
+    this.showSubmitFeedback();
   }
 
   /**

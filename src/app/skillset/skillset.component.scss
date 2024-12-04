@@ -2,7 +2,7 @@
 :host {
     display: flex;
     width: 100%; /* Setzt die Komponente auf volle Breite */
-    max-width: 1440px; /* Optional: Maximale Breite festlegen */
+    justify-content: center;
     margin: 0 auto; /* Zentriert die Komponente innerhalb des übergeordneten Containers */
     background: linear-gradient(128.94deg, #5988FF -33.96%, #5988FF 36.71%, #0043F0 112.25%);
   }
