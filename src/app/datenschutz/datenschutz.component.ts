@@ -5,13 +5,10 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './datenschutz.component.html',
-  styleUrl: './datenschutz.component.scss'
+  styleUrl: './datenschutz.component.scss',
 })
 export class DatenschutzComponent {
-
-  
   scrollToTop(): void {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
-
 }

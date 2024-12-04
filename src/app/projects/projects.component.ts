@@ -11,39 +11,43 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [ProjectComponent, CommonModule],
   templateUrl: './projects.component.html',
-  styleUrl: './projects.component.scss'
+  styleUrl: './projects.component.scss',
 })
 export class ProjectsComponent {
-
-
-
-
   currentLanguage: string = 'en';
-  
+
   title: string = 'My work';
-  sectionText: string = 'Explore a selection of my work here - Interact with projects to see my skills in action';
-  
-  
-  
+  sectionText: string =
+    'Explore a selection of my work here - Interact with projects to see my skills in action';
+
   projects: Project[] = [];
 
-  constructor(private languageService: LanguageService){
+  constructor(private languageService: LanguageService) {}
 
+  /**
+   * initiaes component
+   */
+  ngOnInit(): void {
+    this.initLanguage();
+
+    this.initializeProjects(this.currentLanguage);
   }
 
-  ngOnInit(): void {
-    // Sprache abonnieren
-    this.languageService.language$.subscribe(language => {
+  /**
+   * initiates Language
+   */
+  private initLanguage() {
+    this.languageService.language$.subscribe((language) => {
       this.currentLanguage = language;
       this.updateTexts();
       this.initializeProjects(language);
     });
-
-    // Initialisiere Originaldaten
-    this.initializeProjects(this.currentLanguage);
-    
   }
 
+  /**
+   * initiates Projectdata in relaton to current language
+   * @param language
+   */
   private initializeProjects(language: string): void {
     if (language === 'de') {
       this.projects = PROJECTS_DE;
@@ -52,20 +56,21 @@ export class ProjectsComponent {
     }
   }
 
+  /**
+   * changes texts in the component to German or English
+   */
   private updateTexts(): void {
     if (this.currentLanguage === 'de') {
       this.title = 'Meine Projekte';
-      this.sectionText = 'Entdecke hier eine Auswahl meiner Arbeiten - Interagiere mit Projekten, um meine Fähigkeiten in Aktion zu sehen';
+      this.sectionText =
+        'Entdecke hier eine Auswahl meiner Arbeiten - Interagiere mit Projekten, um meine Fähigkeiten in Aktion zu sehen';
     } else if (this.currentLanguage === 'en') {
       this.title = 'My work';
-      this.sectionText = 'Explore a selection of my work here - Interact with projects to see my skills in action';
+      this.sectionText =
+        'Explore a selection of my work here - Interact with projects to see my skills in action';
     } else {
       this.title = 'My work';
       this.sectionText = 'Explore a selection of my work here';
     }
   }
-
-  
-
-
 }

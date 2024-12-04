@@ -6,45 +6,30 @@ import { LanguageService } from '../services/language.service';
   standalone: true,
   imports: [],
   templateUrl: './atf.component.html',
-  styleUrl: './atf.component.scss'
+  styleUrl: './atf.component.scss',
 })
 export class AtfComponent {
+  currentLanguage: string = 'en';
 
-currentLanguage: string = 'en';
+  greet = 'Hello! I am Björn';
+  title1 = 'FRONTEND';
+  title2 = 'DEVELOPER';
 
-greet = 'Hello! I am Björn';
-title1 ='FRONTEND';
-title2 = 'DEVELOPER';
+  constructor(private languageService: LanguageService) {}
 
-
-constructor(private languageService: LanguageService){
-
-}
-
-
-
-
-
-
-
-
-
-
+  /**
+   * initiates the component
+   */
   ngOnInit(): void {
-    // Sprache abonnieren
-    this.languageService.language$.subscribe(language => {
+    this.languageService.language$.subscribe((language) => {
       this.currentLanguage = language;
       this.updateTexts();
     });
   }
 
-
-
-
-
-
-
-
+  /**
+   * changes the texts to German or English
+   */
   private updateTexts(): void {
     if (this.currentLanguage === 'de') {
       this.greet = 'Hallo! Ich bin Björn';
@@ -61,9 +46,4 @@ constructor(private languageService: LanguageService){
       this.title2 = 'DEVELOPER';
     }
   }
-  
-
-
-
-
 }

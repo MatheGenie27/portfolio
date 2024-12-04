@@ -1,6 +1,6 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap'; 
+import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { TestimonialComponent } from './testimonial/testimonial.component';
 import { Testimonial } from './testimonial-model';
 import { REFERENCES_EN } from './references.data';
@@ -16,42 +16,54 @@ import { LanguageService } from '../services/language.service';
 })
 export class ReferencesComponent implements OnInit {
   currentLanguage: string = 'en';
-  title = "References";
-  header = "Need a teamplayer?";
-  subheader = "Here what my colleagues said about me";
+  title = 'References';
+  header = 'Need a teamplayer?';
+  subheader = 'Here what my colleagues said about me';
 
   references: Testimonial[][] = []; // Referenzen in Gruppen
   originalReferences: Testimonial[] = []; // Originaldaten
 
   constructor(private languageService: LanguageService) {}
 
+  /**
+   * initiaes Component
+   */
   ngOnInit(): void {
-    // Sprache abonnieren
-    this.languageService.language$.subscribe(language => {
+    this.initLanguage();
+
+    this.initializeReferences(this.currentLanguage);
+  }
+
+  /**
+   * initiates Language
+   */
+  initLanguage() {
+    this.languageService.language$.subscribe((language) => {
       this.currentLanguage = language;
       this.updateTexts();
       this.initializeReferences(language);
     });
-
-    this.initializeReferences(this.currentLanguage);
-
-    
   }
 
+  /**
+   * inits the References
+   * @param language
+   */
   private initializeReferences(language: string): void {
     if (language === 'de') {
       this.originalReferences = REFERENCES_DE;
     } else {
       this.originalReferences = REFERENCES_EN; // Fallback: Englisch
     }
-  
-    // Gruppiere die Referenzen nach Sprache
+
     this.references = this.groupReferences(this.originalReferences);
   }
 
-
-
-  // Gruppiert Testimonials basierend auf der Bildschirmbreite
+  /**
+   * Groups Refrences in relation to screenwidth
+   * @param references
+   * @returns
+   */
   groupReferences(references: Testimonial[]): Testimonial[][] {
     if (!references || references.length === 0) {
       return [];
@@ -64,18 +76,27 @@ export class ReferencesComponent implements OnInit {
     return groups;
   }
 
-  // Berechnet Gruppengröße basierend auf Bildschirmbreite
+  /**
+   * calculates group sitze based on screen width
+   * @returns
+   */
   getGroupSize(): number {
     const screenWidth = window.innerWidth;
     return screenWidth > 768 ? 3 : 1;
   }
 
-  // Aktualisiert die Gruppierung bei Fenstergrößenänderung
+  /**
+   * listens to the resizing of the window to actualize the groupsize
+   * @param event
+   */
   @HostListener('window:resize', ['$event'])
   onResize(event: Event): void {
     this.references = this.groupReferences(this.originalReferences); // Gruppierung aktualisieren
   }
 
+  /**
+   * changes the texts to German or English
+   */
   private updateTexts(): void {
     if (this.currentLanguage === 'de') {
       this.title = 'Referenzen';
@@ -92,5 +113,4 @@ export class ReferencesComponent implements OnInit {
       this.subheader = 'Here what my colleagues said about me';
     }
   }
-  
 }

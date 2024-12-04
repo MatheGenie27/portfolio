@@ -7,55 +7,48 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   standalone: true,
   imports: [RouterLink, RouterLinkActive],
   templateUrl: './footer.component.html',
-  styleUrl: './footer.component.scss'
+  styleUrl: './footer.component.scss',
 })
 export class FooterComponent {
-
   currentLanguage: string = 'en';
 
-  legalLinkText: string ='Legal Notice';
+  legalLinkText: string = 'Legal Notice';
   legalLinkHref: string = '/legalNotice';
 
   policyLink = 'privacy';
   privacyLinkText = 'Privacy Policy';
 
-constructor(private languageService: LanguageService){
+  constructor(private languageService: LanguageService) {}
 
-}
-
-ngOnInit(): void {
-  // Sprache abonnieren
-  this.languageService.language$.subscribe(language => {
-    this.currentLanguage = language;
-    this.updateTexts();
-    
-  });
-}
-
-
-private updateTexts(): void {
-  if (this.currentLanguage === 'de') {
-      this.legalLinkText = 'Impressum';
-      this.legalLinkHref = 'impressum'
-      this.policyLink='datenschutz';
-      this.privacyLinkText='Datenschutz';
-  } else if (this.currentLanguage === 'en') {
-      this.legalLinkText = 'Legal Notice';
-      this.legalLinkHref = 'legalNotice';
-      this.policyLink = 'privacy';
-      this.privacyLinkText = 'Privacy Policy';
-
-
-  } else {
-      // Fallback-Sprache (optional, Englisch als Standard)
-      this.legalLinkText = 'Legal Notice';
-      this.legalLinkHref = 'legalNotice';
-      this.policyLink = 'privacy';
-      this.privacyLinkText = 'Privacy Policy';
-
+  /**
+   * initiates the component
+   */
+  ngOnInit(): void {
+    this.languageService.language$.subscribe((language) => {
+      this.currentLanguage = language;
+      this.updateTexts();
+    });
   }
-}
 
-
-
+  /**
+   * changes the texts of the component to German or English
+   */
+  private updateTexts(): void {
+    if (this.currentLanguage === 'de') {
+      this.legalLinkText = 'Impressum';
+      this.legalLinkHref = 'impressum';
+      this.policyLink = 'datenschutz';
+      this.privacyLinkText = 'Datenschutz';
+    } else if (this.currentLanguage === 'en') {
+      this.legalLinkText = 'Legal Notice';
+      this.legalLinkHref = 'legalNotice';
+      this.policyLink = 'privacy';
+      this.privacyLinkText = 'Privacy Policy';
+    } else {
+      this.legalLinkText = 'Legal Notice';
+      this.legalLinkHref = 'legalNotice';
+      this.policyLink = 'privacy';
+      this.privacyLinkText = 'Privacy Policy';
+    }
+  }
 }
