@@ -45,9 +45,9 @@
               name="name"
               type="text"
               id="name"
-              (focus)="onNameFocus()"
-              (blur)="onNameBlur()"
-              (input)="onNameInput($event)"
+              (focus)="utility.onNameFocus()"
+              (blur)="utility.onNameBlur()"
+              (input)="utility.onNameInput($event)"
               [placeholder]="inputNamePlaceholder"
               autocomplete="off"
               required
@@ -88,9 +88,9 @@
               type="email"
               id="email"
               name="email"
-              (focus)="onEmailFocus()"
-              (blur)="onEmailBlur()"
-              (input)="onEmailInput($event)"
+              (focus)="utility.onEmailFocus()"
+              (blur)="utility.onEmailBlur()"
+              (input)="utility.onEmailInput($event)"
               [placeholder]="inputEmailPlaceholder"
               autocomplete="off"
               required
@@ -177,7 +177,7 @@
               class="mainButton"
               type="submit"
               [disabled]="!isFormValid(contactForm)"
-              (focusout)="buttonDeFocus()"
+              (focusout)="utility.buttonDeFocus()"
               (mouseenter)="checkAllValidation()"
             >
               <span>{{ buttonText }}</span>
